@@ -8,16 +8,17 @@ namespace IPChecker
 {
     public partial class FormMain : Form
     {
-        private ForumRssDataGrid _forumThemesRssDataGrid;
-        private ForumRssDataGrid _forumMessagesRssDataGrid;
+        private ForumRssDataGrid _forumRssDataGrid;
+        private NewsRssDataGrid _newsRssDataGrid;
 
         public FormMain()
         {
             InitializeComponent();
-            _forumThemesRssDataGrid = new ForumRssDataGrid();
-            _forumMessagesRssDataGrid = new ForumRssDataGrid();
-            dataGridViewTopics.Rows.AddRange(_forumThemesRssDataGrid.GetTopics().ToArray());
-            dataGridViewMessages.Rows.AddRange(_forumMessagesRssDataGrid.GetMessages().ToArray());
+            _forumRssDataGrid = new ForumRssDataGrid();
+            _newsRssDataGrid = new NewsRssDataGrid();
+            var asdf = _newsRssDataGrid.GetNews();
+            dataGridViewTopics.Rows.AddRange(_forumRssDataGrid.GetTopics().ToArray());
+            dataGridViewMessages.Rows.AddRange(_forumRssDataGrid.GetMessages().ToArray());
         }
 
         private void dataGridViewThemes_CellContentClick(object sender, DataGridViewCellEventArgs e)
