@@ -1,6 +1,6 @@
 ﻿namespace IPChecker
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         /// Требуется переменная конструктора.
@@ -28,16 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridViewForum = new System.Windows.Forms.DataGridView();
-            this.Theme = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            this.dataGridViewTopics = new System.Windows.Forms.DataGridView();
+            this.Theme = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Section = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Link = new System.Windows.Forms.DataGridViewLinkColumn();
             this.tabControlDataGrid = new System.Windows.Forms.TabControl();
-            this.tabPageForum = new System.Windows.Forms.TabPage();
+            this.tabPageTopics = new System.Windows.Forms.TabPage();
+            this.tabPageMessages = new System.Windows.Forms.TabPage();
+            this.dataGridViewMessages = new System.Windows.Forms.DataGridView();
+            this.ThemeMessages = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SectionMessages = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AutorMessages = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateMessages = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageNews = new System.Windows.Forms.TabPage();
             this.tabPagePublications = new System.Windows.Forms.TabPage();
             this.tabPageClassifieds = new System.Windows.Forms.TabPage();
@@ -71,44 +78,68 @@
             this.поискToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.опрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForum)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.labelNewTopics = new System.Windows.Forms.Label();
+            this.labelNewPosts = new System.Windows.Forms.Label();
+            this.labelNews = new System.Windows.Forms.Label();
+            this.labelNewPublications = new System.Windows.Forms.Label();
+            this.labelNewClassifieds = new System.Windows.Forms.Label();
+            this.groupBoxNewEvents = new System.Windows.Forms.GroupBox();
+            this.labelNewTopicsCount = new System.Windows.Forms.Label();
+            this.labelNewPostsCount = new System.Windows.Forms.Label();
+            this.labelNewsCount = new System.Windows.Forms.Label();
+            this.labelNewPublicationsCount = new System.Windows.Forms.Label();
+            this.labelNewClassifiedsCount = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopics)).BeginInit();
             this.tabControlDataGrid.SuspendLayout();
-            this.tabPageForum.SuspendLayout();
+            this.tabPageTopics.SuspendLayout();
+            this.tabPageMessages.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessages)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.groupBoxNewEvents.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // dataGridViewTopics
             // 
-            this.button1.Location = new System.Drawing.Point(331, 314);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewForum
-            // 
-            this.dataGridViewForum.AllowUserToAddRows = false;
-            this.dataGridViewForum.AllowUserToDeleteRows = false;
-            this.dataGridViewForum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewForum.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTopics.AllowUserToAddRows = false;
+            this.dataGridViewTopics.AllowUserToDeleteRows = false;
+            this.dataGridViewTopics.AllowUserToResizeColumns = false;
+            this.dataGridViewTopics.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTopics.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTopics.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewTopics.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewTopics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTopics.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Theme,
             this.Section,
             this.Autor,
-            this.Date,
-            this.Link});
-            this.dataGridViewForum.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewForum.Name = "dataGridViewForum";
-            this.dataGridViewForum.ReadOnly = true;
-            this.dataGridViewForum.Size = new System.Drawing.Size(619, 226);
-            this.dataGridViewForum.TabIndex = 3;
-            this.dataGridViewForum.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewForum_CellContentClick);
+            this.Date});
+            this.dataGridViewTopics.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridViewTopics.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewTopics.Name = "dataGridViewTopics";
+            this.dataGridViewTopics.ReadOnly = true;
+            this.dataGridViewTopics.RowHeadersVisible = false;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTopics.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTopics.Size = new System.Drawing.Size(752, 258);
+            this.dataGridViewTopics.TabIndex = 3;
+            this.dataGridViewTopics.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewThemes_CellContentClick);
             // 
             // Theme
             // 
+            this.Theme.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Theme.FillWeight = 300F;
             this.Theme.HeaderText = "Тема";
             this.Theme.Name = "Theme";
             this.Theme.ReadOnly = true;
+            this.Theme.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Theme.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Theme.Width = 59;
             // 
             // Section
             // 
@@ -128,42 +159,96 @@
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
             // 
-            // Link
-            // 
-            this.Link.HeaderText = "Ссылка";
-            this.Link.Name = "Link";
-            this.Link.ReadOnly = true;
-            // 
             // tabControlDataGrid
             // 
-            this.tabControlDataGrid.Controls.Add(this.tabPageForum);
+            this.tabControlDataGrid.Controls.Add(this.tabPageTopics);
+            this.tabControlDataGrid.Controls.Add(this.tabPageMessages);
             this.tabControlDataGrid.Controls.Add(this.tabPageNews);
             this.tabControlDataGrid.Controls.Add(this.tabPagePublications);
             this.tabControlDataGrid.Controls.Add(this.tabPageClassifieds);
             this.tabControlDataGrid.Location = new System.Drawing.Point(12, 28);
             this.tabControlDataGrid.Name = "tabControlDataGrid";
             this.tabControlDataGrid.SelectedIndex = 0;
-            this.tabControlDataGrid.Size = new System.Drawing.Size(627, 252);
+            this.tabControlDataGrid.Size = new System.Drawing.Size(760, 284);
             this.tabControlDataGrid.TabIndex = 10;
-            this.tabControlDataGrid.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControlDataGrid_Selecting);
             // 
-            // tabPageForum
+            // tabPageTopics
             // 
-            this.tabPageForum.Controls.Add(this.dataGridViewForum);
-            this.tabPageForum.Location = new System.Drawing.Point(4, 22);
-            this.tabPageForum.Name = "tabPageForum";
-            this.tabPageForum.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageForum.Size = new System.Drawing.Size(619, 226);
-            this.tabPageForum.TabIndex = 0;
-            this.tabPageForum.Text = "Форум";
-            this.tabPageForum.UseVisualStyleBackColor = true;
+            this.tabPageTopics.Controls.Add(this.dataGridViewTopics);
+            this.tabPageTopics.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabPageTopics.Location = new System.Drawing.Point(4, 22);
+            this.tabPageTopics.Name = "tabPageTopics";
+            this.tabPageTopics.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageTopics.Size = new System.Drawing.Size(752, 258);
+            this.tabPageTopics.TabIndex = 0;
+            this.tabPageTopics.Text = "Темы";
+            this.tabPageTopics.UseVisualStyleBackColor = true;
+            // 
+            // tabPageMessages
+            // 
+            this.tabPageMessages.Controls.Add(this.dataGridViewMessages);
+            this.tabPageMessages.Location = new System.Drawing.Point(4, 22);
+            this.tabPageMessages.Name = "tabPageMessages";
+            this.tabPageMessages.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageMessages.Size = new System.Drawing.Size(752, 258);
+            this.tabPageMessages.TabIndex = 4;
+            this.tabPageMessages.Text = "Сообщения";
+            this.tabPageMessages.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewMessages
+            // 
+            this.dataGridViewMessages.AllowUserToAddRows = false;
+            this.dataGridViewMessages.AllowUserToDeleteRows = false;
+            this.dataGridViewMessages.AllowUserToResizeColumns = false;
+            this.dataGridViewMessages.AllowUserToResizeRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridViewMessages.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewMessages.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewMessages.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewMessages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMessages.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ThemeMessages,
+            this.SectionMessages,
+            this.AutorMessages,
+            this.DateMessages});
+            this.dataGridViewMessages.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridViewMessages.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewMessages.Name = "dataGridViewMessages";
+            this.dataGridViewMessages.RowHeadersVisible = false;
+            this.dataGridViewMessages.Size = new System.Drawing.Size(752, 258);
+            this.dataGridViewMessages.TabIndex = 0;
+            this.dataGridViewMessages.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMessages_CellContentClick);
+            // 
+            // ThemeMessages
+            // 
+            this.ThemeMessages.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ThemeMessages.FillWeight = 300F;
+            this.ThemeMessages.HeaderText = "Тема";
+            this.ThemeMessages.Name = "ThemeMessages";
+            this.ThemeMessages.Width = 59;
+            // 
+            // SectionMessages
+            // 
+            this.SectionMessages.HeaderText = "Раздел";
+            this.SectionMessages.Name = "SectionMessages";
+            // 
+            // AutorMessages
+            // 
+            this.AutorMessages.HeaderText = "Автор";
+            this.AutorMessages.Name = "AutorMessages";
+            // 
+            // DateMessages
+            // 
+            this.DateMessages.HeaderText = "Дата";
+            this.DateMessages.Name = "DateMessages";
             // 
             // tabPageNews
             // 
             this.tabPageNews.Location = new System.Drawing.Point(4, 22);
             this.tabPageNews.Name = "tabPageNews";
             this.tabPageNews.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageNews.Size = new System.Drawing.Size(619, 226);
+            this.tabPageNews.Size = new System.Drawing.Size(752, 258);
             this.tabPageNews.TabIndex = 1;
             this.tabPageNews.Text = "Новости";
             this.tabPageNews.UseVisualStyleBackColor = true;
@@ -174,7 +259,7 @@
             this.tabPagePublications.Location = new System.Drawing.Point(4, 22);
             this.tabPagePublications.Name = "tabPagePublications";
             this.tabPagePublications.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePublications.Size = new System.Drawing.Size(619, 226);
+            this.tabPagePublications.Size = new System.Drawing.Size(752, 258);
             this.tabPagePublications.TabIndex = 2;
             this.tabPagePublications.Text = "Публикации";
             this.tabPagePublications.UseVisualStyleBackColor = true;
@@ -184,7 +269,7 @@
             this.tabPageClassifieds.Location = new System.Drawing.Point(4, 22);
             this.tabPageClassifieds.Name = "tabPageClassifieds";
             this.tabPageClassifieds.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageClassifieds.Size = new System.Drawing.Size(619, 226);
+            this.tabPageClassifieds.Size = new System.Drawing.Size(752, 258);
             this.tabPageClassifieds.TabIndex = 3;
             this.tabPageClassifieds.Text = "Объявления";
             this.tabPageClassifieds.UseVisualStyleBackColor = true;
@@ -198,7 +283,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(639, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -424,21 +509,145 @@
             this.опрограммеToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.опрограммеToolStripMenuItem.Text = "&О программе...";
             // 
-            // Form1
+            // button1
+            // 
+            this.button1.Image = global::IPChecker.Properties.Resources.update;
+            this.button1.Location = new System.Drawing.Point(704, -1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(27, 23);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // labelNewTopics
+            // 
+            this.labelNewTopics.AutoSize = true;
+            this.labelNewTopics.Location = new System.Drawing.Point(11, 22);
+            this.labelNewTopics.Name = "labelNewTopics";
+            this.labelNewTopics.Size = new System.Drawing.Size(37, 13);
+            this.labelNewTopics.TabIndex = 1;
+            this.labelNewTopics.Text = "темы:";
+            // 
+            // labelNewPosts
+            // 
+            this.labelNewPosts.AutoSize = true;
+            this.labelNewPosts.Location = new System.Drawing.Point(88, 22);
+            this.labelNewPosts.Name = "labelNewPosts";
+            this.labelNewPosts.Size = new System.Drawing.Size(67, 13);
+            this.labelNewPosts.TabIndex = 2;
+            this.labelNewPosts.Text = "сообщения:";
+            // 
+            // labelNews
+            // 
+            this.labelNews.AutoSize = true;
+            this.labelNews.Location = new System.Drawing.Point(204, 22);
+            this.labelNews.Name = "labelNews";
+            this.labelNews.Size = new System.Drawing.Size(51, 13);
+            this.labelNews.TabIndex = 3;
+            this.labelNews.Text = "новости:";
+            // 
+            // labelNewPublications
+            // 
+            this.labelNewPublications.AutoSize = true;
+            this.labelNewPublications.Location = new System.Drawing.Point(307, 22);
+            this.labelNewPublications.Name = "labelNewPublications";
+            this.labelNewPublications.Size = new System.Drawing.Size(69, 13);
+            this.labelNewPublications.TabIndex = 4;
+            this.labelNewPublications.Text = "публикации:";
+            // 
+            // labelNewClassifieds
+            // 
+            this.labelNewClassifieds.AutoSize = true;
+            this.labelNewClassifieds.Location = new System.Drawing.Point(427, 22);
+            this.labelNewClassifieds.Name = "labelNewClassifieds";
+            this.labelNewClassifieds.Size = new System.Drawing.Size(71, 13);
+            this.labelNewClassifieds.TabIndex = 5;
+            this.labelNewClassifieds.Text = "объявления:";
+            // 
+            // groupBoxNewEvents
+            // 
+            this.groupBoxNewEvents.Controls.Add(this.labelNewTopicsCount);
+            this.groupBoxNewEvents.Controls.Add(this.labelNewPostsCount);
+            this.groupBoxNewEvents.Controls.Add(this.labelNewsCount);
+            this.groupBoxNewEvents.Controls.Add(this.labelNewPublicationsCount);
+            this.groupBoxNewEvents.Controls.Add(this.labelNewClassifiedsCount);
+            this.groupBoxNewEvents.Controls.Add(this.labelNewTopics);
+            this.groupBoxNewEvents.Controls.Add(this.labelNewClassifieds);
+            this.groupBoxNewEvents.Controls.Add(this.labelNewPublications);
+            this.groupBoxNewEvents.Controls.Add(this.labelNews);
+            this.groupBoxNewEvents.Controls.Add(this.labelNewPosts);
+            this.groupBoxNewEvents.Location = new System.Drawing.Point(12, 318);
+            this.groupBoxNewEvents.Name = "groupBoxNewEvents";
+            this.groupBoxNewEvents.Size = new System.Drawing.Size(528, 50);
+            this.groupBoxNewEvents.TabIndex = 13;
+            this.groupBoxNewEvents.TabStop = false;
+            this.groupBoxNewEvents.Text = "Новые события";
+            // 
+            // labelNewTopicsCount
+            // 
+            this.labelNewTopicsCount.AutoSize = true;
+            this.labelNewTopicsCount.Location = new System.Drawing.Point(44, 22);
+            this.labelNewTopicsCount.Name = "labelNewTopicsCount";
+            this.labelNewTopicsCount.Size = new System.Drawing.Size(13, 13);
+            this.labelNewTopicsCount.TabIndex = 4;
+            this.labelNewTopicsCount.Text = "0";
+            // 
+            // labelNewPostsCount
+            // 
+            this.labelNewPostsCount.AutoSize = true;
+            this.labelNewPostsCount.Location = new System.Drawing.Point(152, 22);
+            this.labelNewPostsCount.Name = "labelNewPostsCount";
+            this.labelNewPostsCount.Size = new System.Drawing.Size(13, 13);
+            this.labelNewPostsCount.TabIndex = 5;
+            this.labelNewPostsCount.Text = "0";
+            // 
+            // labelNewsCount
+            // 
+            this.labelNewsCount.AutoSize = true;
+            this.labelNewsCount.Location = new System.Drawing.Point(252, 22);
+            this.labelNewsCount.Name = "labelNewsCount";
+            this.labelNewsCount.Size = new System.Drawing.Size(13, 13);
+            this.labelNewsCount.TabIndex = 6;
+            this.labelNewsCount.Text = "0";
+            // 
+            // labelNewPublicationsCount
+            // 
+            this.labelNewPublicationsCount.AutoSize = true;
+            this.labelNewPublicationsCount.Location = new System.Drawing.Point(373, 22);
+            this.labelNewPublicationsCount.Name = "labelNewPublicationsCount";
+            this.labelNewPublicationsCount.Size = new System.Drawing.Size(13, 13);
+            this.labelNewPublicationsCount.TabIndex = 7;
+            this.labelNewPublicationsCount.Text = "0";
+            // 
+            // labelNewClassifiedsCount
+            // 
+            this.labelNewClassifiedsCount.AutoSize = true;
+            this.labelNewClassifiedsCount.Location = new System.Drawing.Point(495, 22);
+            this.labelNewClassifiedsCount.Name = "labelNewClassifiedsCount";
+            this.labelNewClassifiedsCount.Size = new System.Drawing.Size(13, 13);
+            this.labelNewClassifiedsCount.TabIndex = 8;
+            this.labelNewClassifiedsCount.Text = "0";
+            // 
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 349);
-            this.Controls.Add(this.tabControlDataGrid);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(784, 378);
+            this.Controls.Add(this.groupBoxNewEvents);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.tabControlDataGrid);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForum)).EndInit();
+            this.Name = "FormMain";
+            this.Text = "IPChecker";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopics)).EndInit();
             this.tabControlDataGrid.ResumeLayout(false);
-            this.tabPageForum.ResumeLayout(false);
+            this.tabPageTopics.ResumeLayout(false);
+            this.tabPageMessages.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessages)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBoxNewEvents.ResumeLayout(false);
+            this.groupBoxNewEvents.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,15 +655,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridViewForum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Theme;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewLinkColumn Link;
+        private System.Windows.Forms.DataGridView dataGridViewTopics;
         private System.Windows.Forms.TabControl tabControlDataGrid;
-        private System.Windows.Forms.TabPage tabPageForum;
+        private System.Windows.Forms.TabPage tabPageTopics;
         private System.Windows.Forms.TabPage tabPageNews;
         private System.Windows.Forms.TabPage tabPagePublications;
         private System.Windows.Forms.TabPage tabPageClassifieds;
@@ -488,6 +691,28 @@
         private System.Windows.Forms.ToolStripMenuItem поискToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem опрограммеToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewLinkColumn Theme;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.TabPage tabPageMessages;
+        private System.Windows.Forms.DataGridView dataGridViewMessages;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThemeMessages;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SectionMessages;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AutorMessages;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateMessages;
+        private System.Windows.Forms.Label labelNewTopics;
+        private System.Windows.Forms.Label labelNewPosts;
+        private System.Windows.Forms.Label labelNews;
+        private System.Windows.Forms.Label labelNewPublications;
+        private System.Windows.Forms.Label labelNewClassifieds;
+        private System.Windows.Forms.GroupBox groupBoxNewEvents;
+        private System.Windows.Forms.Label labelNewTopicsCount;
+        private System.Windows.Forms.Label labelNewPostsCount;
+        private System.Windows.Forms.Label labelNewsCount;
+        private System.Windows.Forms.Label labelNewPublicationsCount;
+        private System.Windows.Forms.Label labelNewClassifiedsCount;
     }
 }
 
