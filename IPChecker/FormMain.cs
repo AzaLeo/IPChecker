@@ -16,12 +16,12 @@ namespace IPChecker
             InitializeComponent();
             _forumRssDataGrid = new ForumRssDataGrid();
             _newsRssDataGrid = new NewsRssDataGrid();
-            var asdf = _newsRssDataGrid.GetNews();
             dataGridViewTopics.Rows.AddRange(_forumRssDataGrid.GetTopics().ToArray());
             dataGridViewMessages.Rows.AddRange(_forumRssDataGrid.GetMessages().ToArray());
+            dataGridViewNews.Rows.AddRange(_newsRssDataGrid.GetNews().ToArray());
         }
 
-        private void dataGridViewThemes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewTopics_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
             {
@@ -38,5 +38,15 @@ namespace IPChecker
                 System.Diagnostics.Process.Start((string)clickCell.Tag);
             }
         }
+
+        private void dataGridViewNews_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                var clickCell = dataGridViewNews.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                System.Diagnostics.Process.Start((string)clickCell.Tag);
+            }
+        }
+
     }
 }
