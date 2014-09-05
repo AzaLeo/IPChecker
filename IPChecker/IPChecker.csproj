@@ -52,7 +52,7 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="ForumRssDataGrid.cs" />
-    <Compile Include="NewsRssDataGrid.cs" />
+    <Compile Include="ContentRssDataGrid.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">

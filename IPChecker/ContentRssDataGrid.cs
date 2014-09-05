@@ -9,11 +9,18 @@ using System.Xml;
 
 namespace IPChecker
 {
-    class NewsRssDataGrid
+    class ContentRssDataGrid
     {
         public List<DataGridViewRow> GetNews()
         {
             var _reader = XmlReader.Create("http://feeds.feedburner.com/infoport/news");
+            var _feed = SyndicationFeed.Load(_reader);
+            return GetRssData(_feed);
+        }
+        
+        public List<DataGridViewRow> GetPublications()
+        {
+            var _reader = XmlReader.Create("http://feeds.feedburner.com/infoport/publications");
             var _feed = SyndicationFeed.Load(_reader);
             return GetRssData(_feed);
         }
