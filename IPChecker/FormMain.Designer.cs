@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,6 +37,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.dataGridViewTopics = new System.Windows.Forms.DataGridView();
             this.ThemeTopics = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -56,8 +59,14 @@
             this.DateNews = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPagePublications = new System.Windows.Forms.TabPage();
             this.dataGridViewPublications = new System.Windows.Forms.DataGridView();
-            this.tabPageClassifieds = new System.Windows.Forms.TabPage();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.TitlePublications = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.DataPublications = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPageAds = new System.Windows.Forms.TabPage();
+            this.dataGridViewAds = new System.Windows.Forms.DataGridView();
+            this.TitleAds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SectionAds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataAds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,20 +96,21 @@
             this.поискToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.опрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonUpdate = new System.Windows.Forms.Button();
             this.labelNewTopics = new System.Windows.Forms.Label();
             this.labelNewPosts = new System.Windows.Forms.Label();
             this.labelNews = new System.Windows.Forms.Label();
             this.labelNewPublications = new System.Windows.Forms.Label();
-            this.labelNewClassifieds = new System.Windows.Forms.Label();
+            this.labelNewAds = new System.Windows.Forms.Label();
             this.groupBoxNewEvents = new System.Windows.Forms.GroupBox();
             this.labelNewTopicsCount = new System.Windows.Forms.Label();
             this.labelNewPostsCount = new System.Windows.Forms.Label();
             this.labelNewsCount = new System.Windows.Forms.Label();
             this.labelNewPublicationsCount = new System.Windows.Forms.Label();
-            this.labelNewClassifiedsCount = new System.Windows.Forms.Label();
-            this.TitlePublications = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.DataPublications = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelNewAdsCount = new System.Windows.Forms.Label();
+            this.timerUpdate = new System.Windows.Forms.Timer(this.components);
+            this.labelTimeUpdate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopics)).BeginInit();
             this.tabControlDataGrid.SuspendLayout();
             this.tabPageTopics.SuspendLayout();
@@ -110,7 +120,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNews)).BeginInit();
             this.tabPagePublications.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPublications)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.tabPageAds.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAds)).BeginInit();
+            this.menuStripMain.SuspendLayout();
             this.groupBoxNewEvents.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -181,7 +193,7 @@
             this.tabControlDataGrid.Controls.Add(this.tabPageMessages);
             this.tabControlDataGrid.Controls.Add(this.tabPageNews);
             this.tabControlDataGrid.Controls.Add(this.tabPagePublications);
-            this.tabControlDataGrid.Controls.Add(this.tabPageClassifieds);
+            this.tabControlDataGrid.Controls.Add(this.tabPageAds);
             this.tabControlDataGrid.Location = new System.Drawing.Point(12, 28);
             this.tabControlDataGrid.Name = "tabControlDataGrid";
             this.tabControlDataGrid.SelectedIndex = 0;
@@ -370,28 +382,97 @@
             this.dataGridViewPublications.TabIndex = 1;
             this.dataGridViewPublications.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPublications_CellContentClick);
             // 
-            // tabPageClassifieds
+            // TitlePublications
             // 
-            this.tabPageClassifieds.Location = new System.Drawing.Point(4, 22);
-            this.tabPageClassifieds.Name = "tabPageClassifieds";
-            this.tabPageClassifieds.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageClassifieds.Size = new System.Drawing.Size(752, 293);
-            this.tabPageClassifieds.TabIndex = 3;
-            this.tabPageClassifieds.Text = "Объявления";
-            this.tabPageClassifieds.UseVisualStyleBackColor = true;
+            this.TitlePublications.HeaderText = "Заголовок";
+            this.TitlePublications.Name = "TitlePublications";
+            this.TitlePublications.ReadOnly = true;
             // 
-            // menuStrip1
+            // DataPublications
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DataPublications.FillWeight = 20F;
+            this.DataPublications.HeaderText = "Дата";
+            this.DataPublications.Name = "DataPublications";
+            this.DataPublications.ReadOnly = true;
+            this.DataPublications.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataPublications.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // tabPageAds
+            // 
+            this.tabPageAds.Controls.Add(this.dataGridViewAds);
+            this.tabPageAds.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAds.Name = "tabPageAds";
+            this.tabPageAds.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAds.Size = new System.Drawing.Size(752, 293);
+            this.tabPageAds.TabIndex = 3;
+            this.tabPageAds.Text = "Объявления";
+            this.tabPageAds.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewAds
+            // 
+            this.dataGridViewAds.AllowUserToAddRows = false;
+            this.dataGridViewAds.AllowUserToDeleteRows = false;
+            this.dataGridViewAds.AllowUserToResizeColumns = false;
+            this.dataGridViewAds.AllowUserToResizeRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewAds.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewAds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewAds.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridViewAds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAds.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TitleAds,
+            this.SectionAds,
+            this.DataAds});
+            this.dataGridViewAds.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewAds.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridViewAds.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewAds.MultiSelect = false;
+            this.dataGridViewAds.Name = "dataGridViewAds";
+            this.dataGridViewAds.ReadOnly = true;
+            this.dataGridViewAds.RowHeadersVisible = false;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewAds.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewAds.Size = new System.Drawing.Size(746, 287);
+            this.dataGridViewAds.TabIndex = 1;
+            this.dataGridViewAds.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAds_CellContentClick);
+            // 
+            // TitleAds
+            // 
+            this.TitleAds.FillWeight = 180F;
+            this.TitleAds.HeaderText = "Тема";
+            this.TitleAds.Name = "TitleAds";
+            this.TitleAds.ReadOnly = true;
+            // 
+            // SectionAds
+            // 
+            this.SectionAds.FillWeight = 120F;
+            this.SectionAds.HeaderText = "Раздел";
+            this.SectionAds.Name = "SectionAds";
+            this.SectionAds.ReadOnly = true;
+            // 
+            // DataAds
+            // 
+            this.DataAds.FillWeight = 70F;
+            this.DataAds.HeaderText = "Дата";
+            this.DataAds.Name = "DataAds";
+            this.DataAds.ReadOnly = true;
+            // 
+            // menuStripMain
+            // 
+            this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
             this.правкаToolStripMenuItem,
             this.сервисToolStripMenuItem,
-            this.справкаToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
-            this.menuStrip1.TabIndex = 11;
-            this.menuStrip1.Text = "menuStrip1";
+            this.справкаToolStripMenuItem,
+            this.settingsToolStripMenuItem});
+            this.menuStripMain.Location = new System.Drawing.Point(0, 0);
+            this.menuStripMain.Name = "menuStripMain";
+            this.menuStripMain.Size = new System.Drawing.Size(784, 24);
+            this.menuStripMain.TabIndex = 11;
+            this.menuStripMain.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
@@ -615,14 +696,22 @@
             this.опрограммеToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.опрограммеToolStripMenuItem.Text = "&О программе...";
             // 
-            // button1
+            // settingsToolStripMenuItem
             // 
-            this.button1.Image = global::IPChecker.Properties.Resources.update;
-            this.button1.Location = new System.Drawing.Point(741, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 23);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.settingsToolStripMenuItem.Text = "Настройки";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Image = global::IPChecker.Properties.Resources.update;
+            this.buttonUpdate.Location = new System.Drawing.Point(741, 1);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(27, 23);
+            this.buttonUpdate.TabIndex = 0;
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // labelNewTopics
             // 
@@ -660,14 +749,14 @@
             this.labelNewPublications.TabIndex = 4;
             this.labelNewPublications.Text = "публикации:";
             // 
-            // labelNewClassifieds
+            // labelNewAds
             // 
-            this.labelNewClassifieds.AutoSize = true;
-            this.labelNewClassifieds.Location = new System.Drawing.Point(427, 16);
-            this.labelNewClassifieds.Name = "labelNewClassifieds";
-            this.labelNewClassifieds.Size = new System.Drawing.Size(71, 13);
-            this.labelNewClassifieds.TabIndex = 5;
-            this.labelNewClassifieds.Text = "объявления:";
+            this.labelNewAds.AutoSize = true;
+            this.labelNewAds.Location = new System.Drawing.Point(427, 16);
+            this.labelNewAds.Name = "labelNewAds";
+            this.labelNewAds.Size = new System.Drawing.Size(71, 13);
+            this.labelNewAds.TabIndex = 5;
+            this.labelNewAds.Text = "объявления:";
             // 
             // groupBoxNewEvents
             // 
@@ -675,13 +764,13 @@
             this.groupBoxNewEvents.Controls.Add(this.labelNewPostsCount);
             this.groupBoxNewEvents.Controls.Add(this.labelNewsCount);
             this.groupBoxNewEvents.Controls.Add(this.labelNewPublicationsCount);
-            this.groupBoxNewEvents.Controls.Add(this.labelNewClassifiedsCount);
+            this.groupBoxNewEvents.Controls.Add(this.labelNewAdsCount);
             this.groupBoxNewEvents.Controls.Add(this.labelNewTopics);
-            this.groupBoxNewEvents.Controls.Add(this.labelNewClassifieds);
+            this.groupBoxNewEvents.Controls.Add(this.labelNewAds);
             this.groupBoxNewEvents.Controls.Add(this.labelNewPublications);
             this.groupBoxNewEvents.Controls.Add(this.labelNews);
             this.groupBoxNewEvents.Controls.Add(this.labelNewPosts);
-            this.groupBoxNewEvents.Location = new System.Drawing.Point(12, 369);
+            this.groupBoxNewEvents.Location = new System.Drawing.Point(12, 353);
             this.groupBoxNewEvents.Name = "groupBoxNewEvents";
             this.groupBoxNewEvents.Size = new System.Drawing.Size(528, 36);
             this.groupBoxNewEvents.TabIndex = 13;
@@ -724,40 +813,40 @@
             this.labelNewPublicationsCount.TabIndex = 7;
             this.labelNewPublicationsCount.Text = "0";
             // 
-            // labelNewClassifiedsCount
+            // labelNewAdsCount
             // 
-            this.labelNewClassifiedsCount.AutoSize = true;
-            this.labelNewClassifiedsCount.Location = new System.Drawing.Point(495, 16);
-            this.labelNewClassifiedsCount.Name = "labelNewClassifiedsCount";
-            this.labelNewClassifiedsCount.Size = new System.Drawing.Size(13, 13);
-            this.labelNewClassifiedsCount.TabIndex = 8;
-            this.labelNewClassifiedsCount.Text = "0";
+            this.labelNewAdsCount.AutoSize = true;
+            this.labelNewAdsCount.Location = new System.Drawing.Point(495, 16);
+            this.labelNewAdsCount.Name = "labelNewAdsCount";
+            this.labelNewAdsCount.Size = new System.Drawing.Size(13, 13);
+            this.labelNewAdsCount.TabIndex = 8;
+            this.labelNewAdsCount.Text = "0";
             // 
-            // TitlePublications
+            // timerUpdate
             // 
-            this.TitlePublications.HeaderText = "Заголовок";
-            this.TitlePublications.Name = "TitlePublications";
-            this.TitlePublications.ReadOnly = true;
+            this.timerUpdate.Interval = 2000;
             // 
-            // DataPublications
+            // labelTimeUpdate
             // 
-            this.DataPublications.FillWeight = 20F;
-            this.DataPublications.HeaderText = "Дата";
-            this.DataPublications.Name = "DataPublications";
-            this.DataPublications.ReadOnly = true;
-            this.DataPublications.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataPublications.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.labelTimeUpdate.AutoSize = true;
+            this.labelTimeUpdate.BackColor = System.Drawing.SystemColors.Window;
+            this.labelTimeUpdate.Location = new System.Drawing.Point(689, 6);
+            this.labelTimeUpdate.Name = "labelTimeUpdate";
+            this.labelTimeUpdate.Size = new System.Drawing.Size(35, 13);
+            this.labelTimeUpdate.TabIndex = 14;
+            this.labelTimeUpdate.Text = "label1";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(784, 417);
+            this.ClientSize = new System.Drawing.Size(784, 402);
+            this.Controls.Add(this.labelTimeUpdate);
             this.Controls.Add(this.groupBoxNewEvents);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.tabControlDataGrid);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStripMain);
             this.Name = "FormMain";
             this.Text = "IPChecker";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopics)).EndInit();
@@ -769,8 +858,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNews)).EndInit();
             this.tabPagePublications.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPublications)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.tabPageAds.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAds)).EndInit();
+            this.menuStripMain.ResumeLayout(false);
+            this.menuStripMain.PerformLayout();
             this.groupBoxNewEvents.ResumeLayout(false);
             this.groupBoxNewEvents.PerformLayout();
             this.ResumeLayout(false);
@@ -785,8 +876,8 @@
         private System.Windows.Forms.TabPage tabPageTopics;
         private System.Windows.Forms.TabPage tabPageNews;
         private System.Windows.Forms.TabPage tabPagePublications;
-        private System.Windows.Forms.TabPage tabPageClassifieds;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.TabPage tabPageAds;
+        private System.Windows.Forms.MenuStrip menuStripMain;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
@@ -816,20 +907,20 @@
         private System.Windows.Forms.ToolStripMenuItem поискToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem опрограммеToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.TabPage tabPageMessages;
         private System.Windows.Forms.DataGridView dataGridViewMessages;
         private System.Windows.Forms.Label labelNewTopics;
         private System.Windows.Forms.Label labelNewPosts;
         private System.Windows.Forms.Label labelNews;
         private System.Windows.Forms.Label labelNewPublications;
-        private System.Windows.Forms.Label labelNewClassifieds;
+        private System.Windows.Forms.Label labelNewAds;
         private System.Windows.Forms.GroupBox groupBoxNewEvents;
         private System.Windows.Forms.Label labelNewTopicsCount;
         private System.Windows.Forms.Label labelNewPostsCount;
         private System.Windows.Forms.Label labelNewsCount;
         private System.Windows.Forms.Label labelNewPublicationsCount;
-        private System.Windows.Forms.Label labelNewClassifiedsCount;
+        private System.Windows.Forms.Label labelNewAdsCount;
         private System.Windows.Forms.DataGridView dataGridViewNews;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThemeMessages;
         private System.Windows.Forms.DataGridViewTextBoxColumn SectionMessages;
@@ -839,11 +930,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SectionTopics;
         private System.Windows.Forms.DataGridViewTextBoxColumn AutorTopics;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateTopics;
-        private System.Windows.Forms.DataGridViewLinkColumn TitleNews;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateNews;
         private System.Windows.Forms.DataGridView dataGridViewPublications;
         private System.Windows.Forms.DataGridViewLinkColumn TitlePublications;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataPublications;
+        private System.Windows.Forms.DataGridView dataGridViewAds;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TitleAds;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SectionAds;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataAds;
+        private System.Windows.Forms.DataGridViewLinkColumn TitleNews;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateNews;
+        private System.Windows.Forms.Timer timerUpdate;
+        private System.Windows.Forms.Label labelTimeUpdate;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
     }
 }
 

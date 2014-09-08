@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdsRssDataGrid.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +56,13 @@
     <Compile Include="ContentRssDataGrid.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IPCheckerSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IPCheckerSettings.Designer.cs">
+      <DependentUpon>IPCheckerSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -68,6 +76,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="IPCheckerSettings.resx">
+      <DependentUpon>IPCheckerSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
