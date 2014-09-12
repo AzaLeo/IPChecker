@@ -48,7 +48,7 @@
             // checkBoxSoundNotification
             // 
             this.checkBoxSoundNotification.AutoSize = true;
-            this.checkBoxSoundNotification.Location = new System.Drawing.Point(12, 48);
+            this.checkBoxSoundNotification.Location = new System.Drawing.Point(12, 43);
             this.checkBoxSoundNotification.Name = "checkBoxSoundNotification";
             this.checkBoxSoundNotification.Size = new System.Drawing.Size(144, 17);
             this.checkBoxSoundNotification.TabIndex = 0;
@@ -58,7 +58,7 @@
             // checkBoxPopUpNotifications
             // 
             this.checkBoxPopUpNotifications.AutoSize = true;
-            this.checkBoxPopUpNotifications.Location = new System.Drawing.Point(12, 71);
+            this.checkBoxPopUpNotifications.Location = new System.Drawing.Point(12, 66);
             this.checkBoxPopUpNotifications.Name = "checkBoxPopUpNotifications";
             this.checkBoxPopUpNotifications.Size = new System.Drawing.Size(170, 17);
             this.checkBoxPopUpNotifications.TabIndex = 1;
@@ -68,7 +68,7 @@
             // checkBoxIntervalChecking
             // 
             this.checkBoxIntervalChecking.AutoSize = true;
-            this.checkBoxIntervalChecking.Location = new System.Drawing.Point(12, 94);
+            this.checkBoxIntervalChecking.Location = new System.Drawing.Point(12, 89);
             this.checkBoxIntervalChecking.Name = "checkBoxIntervalChecking";
             this.checkBoxIntervalChecking.Size = new System.Drawing.Size(149, 17);
             this.checkBoxIntervalChecking.TabIndex = 2;
@@ -86,7 +86,7 @@
             "20",
             "30",
             "1"});
-            this.comboBoxMinutes.Location = new System.Drawing.Point(164, 92);
+            this.comboBoxMinutes.Location = new System.Drawing.Point(164, 87);
             this.comboBoxMinutes.Name = "comboBoxMinutes";
             this.comboBoxMinutes.Size = new System.Drawing.Size(43, 21);
             this.comboBoxMinutes.TabIndex = 3;
@@ -94,7 +94,7 @@
             // labelMinutes
             // 
             this.labelMinutes.AutoSize = true;
-            this.labelMinutes.Location = new System.Drawing.Point(213, 95);
+            this.labelMinutes.Location = new System.Drawing.Point(213, 90);
             this.labelMinutes.Name = "labelMinutes";
             this.labelMinutes.Size = new System.Drawing.Size(37, 13);
             this.labelMinutes.TabIndex = 4;
@@ -103,7 +103,7 @@
             // checkBoxRunSystemStart
             // 
             this.checkBoxRunSystemStart.AutoSize = true;
-            this.checkBoxRunSystemStart.Location = new System.Drawing.Point(12, 25);
+            this.checkBoxRunSystemStart.Location = new System.Drawing.Point(12, 20);
             this.checkBoxRunSystemStart.Name = "checkBoxRunSystemStart";
             this.checkBoxRunSystemStart.Size = new System.Drawing.Size(185, 17);
             this.checkBoxRunSystemStart.TabIndex = 5;
@@ -117,7 +117,7 @@
             this.groupBoxTrackEvents.Controls.Add(this.checkBoxNews);
             this.groupBoxTrackEvents.Controls.Add(this.checkBoxMessages);
             this.groupBoxTrackEvents.Controls.Add(this.checkBoxTopics);
-            this.groupBoxTrackEvents.Location = new System.Drawing.Point(12, 141);
+            this.groupBoxTrackEvents.Location = new System.Drawing.Point(12, 123);
             this.groupBoxTrackEvents.Name = "groupBoxTrackEvents";
             this.groupBoxTrackEvents.Size = new System.Drawing.Size(238, 146);
             this.groupBoxTrackEvents.TabIndex = 6;
@@ -177,7 +177,7 @@
             // buttonOk
             // 
             this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonOk.Location = new System.Drawing.Point(42, 302);
+            this.buttonOk.Location = new System.Drawing.Point(42, 286);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(75, 23);
             this.buttonOk.TabIndex = 7;
@@ -188,7 +188,7 @@
             // buttonCancel
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(141, 302);
+            this.buttonCancel.Location = new System.Drawing.Point(141, 286);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 8;
@@ -201,7 +201,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(263, 346);
+            this.ClientSize = new System.Drawing.Size(262, 325);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.groupBoxTrackEvents);
