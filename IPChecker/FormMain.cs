@@ -19,9 +19,9 @@ namespace IPChecker
             _contentRssDataGrid = new ContentRssDataGrid();
             _adsRssDataGrid = new AdsRssDataGrid();
             UpdateRssDataGrid();
-            timerUpdate.Interval = Convert.ToInt32(Properties.Settings.Default.IntervalUpdate);
-            timerUpdate.Tick += timerUpdate_Tick;
-            timerUpdate.Start();
+            //timerUpdate.Interval = Properties.Settings.Default.IntervalUpdate;
+            //timerUpdate.Tick += timerUpdate_Tick;
+            //timerUpdate.Start();
         }
 
         void timerUpdate_Tick(object sender, EventArgs e)

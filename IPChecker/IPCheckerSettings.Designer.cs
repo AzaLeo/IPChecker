@@ -74,14 +74,18 @@
             this.checkBoxIntervalChecking.TabIndex = 2;
             this.checkBoxIntervalChecking.Text = "Проверка с интервалом";
             this.checkBoxIntervalChecking.UseVisualStyleBackColor = true;
+            this.checkBoxIntervalChecking.CheckedChanged += new System.EventHandler(this.checkBoxIntervalChecking_CheckedChanged);
             // 
             // comboBoxMinutes
             // 
             this.comboBoxMinutes.FormattingEnabled = true;
             this.comboBoxMinutes.Items.AddRange(new object[] {
-            "5000",
-            "10000",
-            "15000"});
+            "5",
+            "10",
+            "15",
+            "20",
+            "30",
+            "1"});
             this.comboBoxMinutes.Location = new System.Drawing.Point(164, 92);
             this.comboBoxMinutes.Name = "comboBoxMinutes";
             this.comboBoxMinutes.Size = new System.Drawing.Size(43, 21);
@@ -190,13 +194,14 @@
             this.buttonCancel.TabIndex = 8;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // IPCheckerSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(284, 351);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(263, 346);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.groupBoxTrackEvents);

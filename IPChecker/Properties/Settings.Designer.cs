@@ -37,13 +37,109 @@ namespace IPChecker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5000")]
-        public string IntervalUpdate {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SoundNotification {
             get {
-                return ((string)(this["IntervalUpdate"]));
+                return ((bool)(this["SoundNotification"]));
             }
             set {
-                this["IntervalUpdate"] = value;
+                this["SoundNotification"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PopUpNotification {
+            get {
+                return ((bool)(this["PopUpNotification"]));
+            }
+            set {
+                this["PopUpNotification"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int IntervalUpdateValue {
+            get {
+                return ((int)(this["IntervalUpdateValue"]));
+            }
+            set {
+                this["IntervalUpdateValue"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TrackEventTopics {
+            get {
+                return ((bool)(this["TrackEventTopics"]));
+            }
+            set {
+                this["TrackEventTopics"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TrackEventMessages {
+            get {
+                return ((bool)(this["TrackEventMessages"]));
+            }
+            set {
+                this["TrackEventMessages"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TrackEventNews {
+            get {
+                return ((bool)(this["TrackEventNews"]));
+            }
+            set {
+                this["TrackEventNews"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TrackEventPublications {
+            get {
+                return ((bool)(this["TrackEventPublications"]));
+            }
+            set {
+                this["TrackEventPublications"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TrackEventAds {
+            get {
+                return ((bool)(this["TrackEventAds"]));
+            }
+            set {
+                this["TrackEventAds"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IntervalUpdateCheckBox {
+            get {
+                return ((bool)(this["IntervalUpdateCheckBox"]));
+            }
+            set {
+                this["IntervalUpdateCheckBox"] = value;
             }
         }
     }

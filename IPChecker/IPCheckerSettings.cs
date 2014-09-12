@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IPChecker.Properties;
 
 namespace IPChecker
 {
@@ -15,13 +16,55 @@ namespace IPChecker
         public IPCheckerSettings()
         {
             InitializeComponent();
-            comboBoxMinutes.SelectedItem = Properties.Settings.Default.IntervalUpdate;
+            checkBoxRunSystemStart.Checked = Settings.Default.RunSystemStart;
+            checkBoxSoundNotification.Checked = Settings.Default.SoundNotification;
+            checkBoxPopUpNotifications.Checked = Settings.Default.PopUpNotification;
+            checkBoxIntervalChecking.Checked = Settings.Default.IntervalUpdateCheckBox;
+            comboBoxMinutes.SelectedIndex = Settings.Default.IntervalUpdateValue;
+            checkBoxTopics.Checked = Settings.Default.TrackEventTopics;
+            checkBoxMessages.Checked = Settings.Default.TrackEventMessages;
+            checkBoxNews.Checked = Settings.Default.TrackEventNews;
+            checkBoxPublications.Checked = Settings.Default.TrackEventPublications;
+            checkBoxAds.Checked = Settings.Default.TrackEventAds;
+            CheckIntervalCheckBox();
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.IntervalUpdate = (string)comboBoxMinutes.SelectedItem;
+            Settings.Default.RunSystemStart = checkBoxRunSystemStart.Checked;
+            Settings.Default.SoundNotification = checkBoxSoundNotification.Checked;
+            Settings.Default.PopUpNotification = checkBoxPopUpNotifications.Checked;
+            Settings.Default.IntervalUpdateCheckBox = checkBoxIntervalChecking.Checked;
+            Settings.Default.IntervalUpdateValue = comboBoxMinutes.SelectedIndex;
+            Settings.Default.TrackEventTopics = checkBoxTopics.Checked;
+            Settings.Default.TrackEventMessages = checkBoxMessages.Checked;
+            Settings.Default.TrackEventNews = checkBoxNews.Checked;
+            Settings.Default.TrackEventPublications = checkBoxPublications.Checked;
+            Settings.Default.TrackEventAds = checkBoxAds.Checked;
+            Settings.Default.Save();
             Close();
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void checkBoxIntervalChecking_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckIntervalCheckBox();
+        }
+
+        private void CheckIntervalCheckBox()
+        {
+            if (checkBoxIntervalChecking.Checked)
+            {
+                comboBoxMinutes.Enabled = true;
+            }
+            else
+            {
+                comboBoxMinutes.Enabled = false;
+            }
         }
     }
 }
