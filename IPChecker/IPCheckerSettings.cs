@@ -13,13 +13,17 @@ namespace IPChecker
 {
     public partial class IPCheckerSettings : Form
     {
+        public readonly List<int> minutesUpdate = new List<int>() { 5, 10, 15, 20, 30, 60 };
+
         public IPCheckerSettings()
         {
             InitializeComponent();
+            
             checkBoxRunSystemStart.Checked = Settings.Default.RunSystemStart;
             checkBoxSoundNotification.Checked = Settings.Default.SoundNotification;
             checkBoxPopUpNotifications.Checked = Settings.Default.PopUpNotification;
-            checkBoxIntervalChecking.Checked = Settings.Default.IntervalUpdateCheckBox;
+            checkBoxIntervalChecking.Checked = Settings.Default.IntervalUpdate;
+            comboBoxMinutes.DataSource = minutesUpdate;
             comboBoxMinutes.SelectedIndex = Settings.Default.IntervalUpdateValue;
             checkBoxTopics.Checked = Settings.Default.TrackEventTopics;
             checkBoxMessages.Checked = Settings.Default.TrackEventMessages;
@@ -34,7 +38,7 @@ namespace IPChecker
             Settings.Default.RunSystemStart = checkBoxRunSystemStart.Checked;
             Settings.Default.SoundNotification = checkBoxSoundNotification.Checked;
             Settings.Default.PopUpNotification = checkBoxPopUpNotifications.Checked;
-            Settings.Default.IntervalUpdateCheckBox = checkBoxIntervalChecking.Checked;
+            Settings.Default.IntervalUpdate = checkBoxIntervalChecking.Checked;
             Settings.Default.IntervalUpdateValue = comboBoxMinutes.SelectedIndex;
             Settings.Default.TrackEventTopics = checkBoxTopics.Checked;
             Settings.Default.TrackEventMessages = checkBoxMessages.Checked;

@@ -61,7 +61,7 @@ namespace IPChecker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
         public int IntervalUpdateValue {
             get {
                 return ((int)(this["IntervalUpdateValue"]));
@@ -134,12 +134,12 @@ namespace IPChecker.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool IntervalUpdateCheckBox {
+        public bool IntervalUpdate {
             get {
-                return ((bool)(this["IntervalUpdateCheckBox"]));
+                return ((bool)(this["IntervalUpdate"]));
             }
             set {
-                this["IntervalUpdateCheckBox"] = value;
+                this["IntervalUpdate"] = value;
             }
         }
     }

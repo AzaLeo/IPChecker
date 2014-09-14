@@ -3,6 +3,7 @@ using System.ServiceModel.Syndication;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using IPChecker.Properties;
 
 namespace IPChecker
 {
@@ -11,6 +12,7 @@ namespace IPChecker
         private ForumRssDataGrid _forumRssDataGrid;
         private ContentRssDataGrid _contentRssDataGrid;
         private AdsRssDataGrid _adsRssDataGrid;
+        private IPCheckerSettings _ipCheckerSettings;
 
         public FormMain()
         {
@@ -18,15 +20,24 @@ namespace IPChecker
             _forumRssDataGrid = new ForumRssDataGrid();
             _contentRssDataGrid = new ContentRssDataGrid();
             _adsRssDataGrid = new AdsRssDataGrid();
-            UpdateRssDataGrid();
-            //timerUpdate.Interval = Properties.Settings.Default.IntervalUpdate;
-            //timerUpdate.Tick += timerUpdate_Tick;
-            //timerUpdate.Start();
+            _ipCheckerSettings = new IPCheckerSettings();
+            timerUpdate.Tick += timerUpdate_Tick;
+            //UpdateRssDataGrid();
+            SetSettings();
+        }
+
+        private void SetSettings()
+        {
+            if (Settings.Default.IntervalUpdate)
+            {
+                timerUpdate.Interval = (int)new TimeSpan(0, _ipCheckerSettings.minutesUpdate[Settings.Default.IntervalUpdateValue], 0).TotalMilliseconds;
+                timerUpdate.Start();
+            }
         }
 
         void timerUpdate_Tick(object sender, EventArgs e)
         {
-            UpdateRssDataGrid();
+            throw new NotImplementedException();
         }
 
         private void dataGridViewTopics_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -85,7 +85,7 @@
             "15",
             "20",
             "30",
-            "1"});
+            "60"});
             this.comboBoxMinutes.Location = new System.Drawing.Point(164, 87);
             this.comboBoxMinutes.Name = "comboBoxMinutes";
             this.comboBoxMinutes.Size = new System.Drawing.Size(43, 21);

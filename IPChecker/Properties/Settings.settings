@@ -12,7 +12,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="IntervalUpdateValue" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="TrackEventTopics" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -29,7 +29,7 @@
     <Setting Name="TrackEventAds" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="IntervalUpdateCheckBox" Type="System.Boolean" Scope="User">
+    <Setting Name="IntervalUpdate" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
