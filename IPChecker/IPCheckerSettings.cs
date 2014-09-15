@@ -8,17 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IPChecker.Properties;
+using System.Threading;
 
 namespace IPChecker
 {
     public partial class IPCheckerSettings : Form
     {
         public readonly List<int> minutesUpdate = new List<int>() { 5, 10, 15, 20, 30, 60 };
+        public event EventHandler UpdateSettings;
 
         public IPCheckerSettings()
         {
             InitializeComponent();
-            
             checkBoxRunSystemStart.Checked = Settings.Default.RunSystemStart;
             checkBoxSoundNotification.Checked = Settings.Default.SoundNotification;
             checkBoxPopUpNotifications.Checked = Settings.Default.PopUpNotification;
@@ -46,6 +47,7 @@ namespace IPChecker
             Settings.Default.TrackEventPublications = checkBoxPublications.Checked;
             Settings.Default.TrackEventAds = checkBoxAds.Checked;
             Settings.Default.Save();
+            OnUpdateSettings(EventArgs.Empty);
             Close();
         }
 
@@ -69,6 +71,12 @@ namespace IPChecker
             {
                 comboBoxMinutes.Enabled = false;
             }
+        }
+
+        protected virtual void OnUpdateSettings(EventArgs e)
+        {
+            EventHandler temp = UpdateSettings;
+            if (temp != null) temp(this, e);
         }
     }
 }

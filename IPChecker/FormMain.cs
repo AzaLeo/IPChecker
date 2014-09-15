@@ -12,7 +12,6 @@ namespace IPChecker
         private ForumRssDataGrid _forumRssDataGrid;
         private ContentRssDataGrid _contentRssDataGrid;
         private AdsRssDataGrid _adsRssDataGrid;
-        private IPCheckerSettings _ipCheckerSettings;
 
         public FormMain()
         {
@@ -20,7 +19,6 @@ namespace IPChecker
             _forumRssDataGrid = new ForumRssDataGrid();
             _contentRssDataGrid = new ContentRssDataGrid();
             _adsRssDataGrid = new AdsRssDataGrid();
-            _ipCheckerSettings = new IPCheckerSettings();
             timerUpdate.Tick += timerUpdate_Tick;
             //UpdateRssDataGrid();
             SetSettings();
@@ -30,7 +28,7 @@ namespace IPChecker
         {
             if (Settings.Default.IntervalUpdate)
             {
-                timerUpdate.Interval = (int)new TimeSpan(0, _ipCheckerSettings.minutesUpdate[Settings.Default.IntervalUpdateValue], 0).TotalMilliseconds;
+                timerUpdate.Interval = (int)new TimeSpan(0, new IPCheckerSettings().minutesUpdate[Settings.Default.IntervalUpdateValue], 0).TotalMilliseconds;
                 timerUpdate.Start();
             }
         }
@@ -107,8 +105,14 @@ namespace IPChecker
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IPCheckerSettings ipCheckerSettings = new IPCheckerSettings();
+            var ipCheckerSettings = new IPCheckerSettings();
+            ipCheckerSettings.UpdateSettings += _ipCheckerSettings_UpdateSettings;
             ipCheckerSettings.Show();
+        }
+
+        void _ipCheckerSettings_UpdateSettings(object sender, EventArgs e)
+        {
+            SetSettings();
         }
 
     }
