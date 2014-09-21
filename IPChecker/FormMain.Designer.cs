@@ -706,7 +706,7 @@
             // buttonUpdate
             // 
             this.buttonUpdate.Image = global::IPChecker.Properties.Resources.update;
-            this.buttonUpdate.Location = new System.Drawing.Point(741, 1);
+            this.buttonUpdate.Location = new System.Drawing.Point(741, 0);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(27, 23);
             this.buttonUpdate.TabIndex = 0;

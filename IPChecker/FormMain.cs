@@ -19,23 +19,37 @@ namespace IPChecker
             _forumRssDataGrid = new ForumRssDataGrid();
             _contentRssDataGrid = new ContentRssDataGrid();
             _adsRssDataGrid = new AdsRssDataGrid();
-            timerUpdate.Tick += timerUpdate_Tick;
             //UpdateRssDataGrid();
             SetSettings();
         }
 
         private void SetSettings()
         {
+            var settings = new IPCheckerSettings();
+
             if (Settings.Default.IntervalUpdate)
             {
-                timerUpdate.Interval = (int)new TimeSpan(0, new IPCheckerSettings().minutesUpdate[Settings.Default.IntervalUpdateValue], 0).TotalMilliseconds;
+                timerUpdate.Tick += timerUpdate_Tick;
+                timerUpdate.Interval = (int)new TimeSpan(0, settings.minutesUpdate[Settings.Default.IntervalUpdateValue], 0).TotalMilliseconds;
                 timerUpdate.Start();
+            }
+            if (Settings.Default.RunSystemStart)
+            {
+                var key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
+                key.SetValue("IPChecker", Application.ExecutablePath);
+                key.Close();
+            }
+            else
+            {
+                var key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
+                key.DeleteValue("IPChecker");
+                key.Close();
             }
         }
 
         void timerUpdate_Tick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            UpdateRssDataGrid();
         }
 
         private void dataGridViewTopics_CellContentClick(object sender, DataGridViewCellEventArgs e)

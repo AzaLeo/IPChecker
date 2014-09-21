@@ -79,13 +79,6 @@
             // comboBoxMinutes
             // 
             this.comboBoxMinutes.FormattingEnabled = true;
-            this.comboBoxMinutes.Items.AddRange(new object[] {
-            "5",
-            "10",
-            "15",
-            "20",
-            "30",
-            "60"});
             this.comboBoxMinutes.Location = new System.Drawing.Point(164, 87);
             this.comboBoxMinutes.Name = "comboBoxMinutes";
             this.comboBoxMinutes.Size = new System.Drawing.Size(43, 21);
