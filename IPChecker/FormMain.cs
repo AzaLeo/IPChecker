@@ -5,6 +5,7 @@ using System.Xml;
 using System.Xml.Linq;
 using IPChecker.Properties;
 using System.Collections.Generic;
+using System.Media;
 
 namespace IPChecker
 {
@@ -13,6 +14,7 @@ namespace IPChecker
         private ForumRssDataGrid _forumRssDataGrid;
         private ContentRssDataGrid _contentRssDataGrid;
         private AdsRssDataGrid _adsRssDataGrid;
+        private SoundPlayer _sound;
 
         public FormMain()
         {
@@ -20,6 +22,7 @@ namespace IPChecker
             _forumRssDataGrid = new ForumRssDataGrid();
             _contentRssDataGrid = new ContentRssDataGrid();
             _adsRssDataGrid = new AdsRssDataGrid();
+            _sound = new SoundPlayer(Resources.DefaultSound);
             SetSettings();
             InitializeRssDataGrid();
         }
@@ -130,40 +133,51 @@ namespace IPChecker
             var newRowsTopics = _forumRssDataGrid.GetTopics();
             var newRowsPosts = _forumRssDataGrid.GetPosts();
             var newRowsNews = _contentRssDataGrid.GetNews();
-            var newRowsPublications = _contentRssDataGrid.GetNews();
+            var newRowsPublications = _contentRssDataGrid.GetPublications();
             var newRowsAds = _adsRssDataGrid.GetAds();
             var change = new NotifyChangeRss();
+            int haveUpdate = 0;
 
             if (change.CheckTopics(dataGridViewTopics.Rows[0], newRowsTopics) > 0)
             {
+                haveUpdate++;
                 labelNewTopicsCount.Text = change.NewTopicsCount;
                 AddNewRowsTopics(newRowsTopics);
             }
 
             if (change.CheckPosts(dataGridViewPosts.Rows[0], newRowsPosts) > 0)
             {
+                haveUpdate++;
                 labelNewPostsCount.Text = change.NewPostsCount;
                 AddNewRowsPosts(newRowsPosts);
             }
 
             if (change.CheckNews(dataGridViewNews.Rows[0], newRowsNews) > 0)
             {
+                haveUpdate++;
                 labelNewsCount.Text = change.NewsCount;
                 AddNewRowsNews(newRowsNews);
             }
 
             if (change.CheckPublications(dataGridViewPublications.Rows[0], newRowsPublications) > 0)
             {
+                haveUpdate++;
                 labelNewPublicationsCount.Text = change.NewPublicationsCount;
                 AddNewRowsPublications(newRowsPublications);
             }
 
             if (change.CheckAds(dataGridViewAds.Rows[0], newRowsAds) > 0)
             {
+                haveUpdate++;
                 labelNewAdsCount.Text = change.NewAdsCount;
                 AddNewRowsAds(newRowsAds);
             }
             labelTimeUpdate.Text = DateTime.Now.ToString("HH:mm:ss");
+
+            if (Settings.Default.SoundNotification)
+            {
+                _sound.Play();
+            }
         }
         
         // Добавление новых строк в DataGridView.

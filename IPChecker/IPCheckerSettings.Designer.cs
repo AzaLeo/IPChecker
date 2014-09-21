@@ -58,6 +58,7 @@
             // checkBoxPopUpNotifications
             // 
             this.checkBoxPopUpNotifications.AutoSize = true;
+            this.checkBoxPopUpNotifications.Enabled = false;
             this.checkBoxPopUpNotifications.Location = new System.Drawing.Point(12, 66);
             this.checkBoxPopUpNotifications.Name = "checkBoxPopUpNotifications";
             this.checkBoxPopUpNotifications.Size = new System.Drawing.Size(170, 17);
