@@ -17,7 +17,7 @@
     <Setting Name="TrackEventTopics" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="TrackEventMessages" Type="System.Boolean" Scope="User">
+    <Setting Name="TrackEventPosts" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TrackEventNews" Type="System.Boolean" Scope="User">

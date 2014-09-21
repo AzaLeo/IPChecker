@@ -38,7 +38,7 @@
             this.checkBoxAds = new System.Windows.Forms.CheckBox();
             this.checkBoxPublications = new System.Windows.Forms.CheckBox();
             this.checkBoxNews = new System.Windows.Forms.CheckBox();
-            this.checkBoxMessages = new System.Windows.Forms.CheckBox();
+            this.checkBoxPosts = new System.Windows.Forms.CheckBox();
             this.checkBoxTopics = new System.Windows.Forms.CheckBox();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -108,7 +108,7 @@
             this.groupBoxTrackEvents.Controls.Add(this.checkBoxAds);
             this.groupBoxTrackEvents.Controls.Add(this.checkBoxPublications);
             this.groupBoxTrackEvents.Controls.Add(this.checkBoxNews);
-            this.groupBoxTrackEvents.Controls.Add(this.checkBoxMessages);
+            this.groupBoxTrackEvents.Controls.Add(this.checkBoxPosts);
             this.groupBoxTrackEvents.Controls.Add(this.checkBoxTopics);
             this.groupBoxTrackEvents.Location = new System.Drawing.Point(12, 123);
             this.groupBoxTrackEvents.Name = "groupBoxTrackEvents";
@@ -147,15 +147,15 @@
             this.checkBoxNews.Text = "Новости";
             this.checkBoxNews.UseVisualStyleBackColor = true;
             // 
-            // checkBoxMessages
+            // checkBoxPosts
             // 
-            this.checkBoxMessages.AutoSize = true;
-            this.checkBoxMessages.Location = new System.Drawing.Point(6, 46);
-            this.checkBoxMessages.Name = "checkBoxMessages";
-            this.checkBoxMessages.Size = new System.Drawing.Size(78, 17);
-            this.checkBoxMessages.TabIndex = 1;
-            this.checkBoxMessages.Text = "Собщения";
-            this.checkBoxMessages.UseVisualStyleBackColor = true;
+            this.checkBoxPosts.AutoSize = true;
+            this.checkBoxPosts.Location = new System.Drawing.Point(6, 46);
+            this.checkBoxPosts.Name = "checkBoxPosts";
+            this.checkBoxPosts.Size = new System.Drawing.Size(78, 17);
+            this.checkBoxPosts.TabIndex = 1;
+            this.checkBoxPosts.Text = "Собщения";
+            this.checkBoxPosts.UseVisualStyleBackColor = true;
             // 
             // checkBoxTopics
             // 
@@ -225,7 +225,7 @@
         private System.Windows.Forms.CheckBox checkBoxAds;
         private System.Windows.Forms.CheckBox checkBoxPublications;
         private System.Windows.Forms.CheckBox checkBoxNews;
-        private System.Windows.Forms.CheckBox checkBoxMessages;
+        private System.Windows.Forms.CheckBox checkBoxPosts;
         private System.Windows.Forms.CheckBox checkBoxTopics;
         private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.Button buttonCancel;

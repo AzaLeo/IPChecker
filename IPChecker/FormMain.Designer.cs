@@ -47,12 +47,12 @@
             this.DateTopics = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlDataGrid = new System.Windows.Forms.TabControl();
             this.tabPageTopics = new System.Windows.Forms.TabPage();
-            this.tabPageMessages = new System.Windows.Forms.TabPage();
-            this.dataGridViewMessages = new System.Windows.Forms.DataGridView();
-            this.ThemeMessages = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SectionMessages = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AutorMessages = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateMessages = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPagePosts = new System.Windows.Forms.TabPage();
+            this.dataGridViewPosts = new System.Windows.Forms.DataGridView();
+            this.ThemePosts = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SectionPosts = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AutorPosts = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatePosts = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageNews = new System.Windows.Forms.TabPage();
             this.dataGridViewNews = new System.Windows.Forms.DataGridView();
             this.TitleNews = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -114,8 +114,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopics)).BeginInit();
             this.tabControlDataGrid.SuspendLayout();
             this.tabPageTopics.SuspendLayout();
-            this.tabPageMessages.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessages)).BeginInit();
+            this.tabPagePosts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPosts)).BeginInit();
             this.tabPageNews.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNews)).BeginInit();
             this.tabPagePublications.SuspendLayout();
@@ -190,7 +190,7 @@
             // tabControlDataGrid
             // 
             this.tabControlDataGrid.Controls.Add(this.tabPageTopics);
-            this.tabControlDataGrid.Controls.Add(this.tabPageMessages);
+            this.tabControlDataGrid.Controls.Add(this.tabPagePosts);
             this.tabControlDataGrid.Controls.Add(this.tabPageNews);
             this.tabControlDataGrid.Controls.Add(this.tabPagePublications);
             this.tabControlDataGrid.Controls.Add(this.tabPageAds);
@@ -212,75 +212,75 @@
             this.tabPageTopics.Text = "Темы";
             this.tabPageTopics.UseVisualStyleBackColor = true;
             // 
-            // tabPageMessages
+            // tabPagePosts
             // 
-            this.tabPageMessages.Controls.Add(this.dataGridViewMessages);
-            this.tabPageMessages.Location = new System.Drawing.Point(4, 22);
-            this.tabPageMessages.Name = "tabPageMessages";
-            this.tabPageMessages.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMessages.Size = new System.Drawing.Size(752, 293);
-            this.tabPageMessages.TabIndex = 4;
-            this.tabPageMessages.Text = "Сообщения";
-            this.tabPageMessages.UseVisualStyleBackColor = true;
+            this.tabPagePosts.Controls.Add(this.dataGridViewPosts);
+            this.tabPagePosts.Location = new System.Drawing.Point(4, 22);
+            this.tabPagePosts.Name = "tabPagePosts";
+            this.tabPagePosts.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePosts.Size = new System.Drawing.Size(752, 293);
+            this.tabPagePosts.TabIndex = 4;
+            this.tabPagePosts.Text = "Сообщения";
+            this.tabPagePosts.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewMessages
+            // dataGridViewPosts
             // 
-            this.dataGridViewMessages.AllowUserToAddRows = false;
-            this.dataGridViewMessages.AllowUserToDeleteRows = false;
-            this.dataGridViewMessages.AllowUserToResizeColumns = false;
-            this.dataGridViewMessages.AllowUserToResizeRows = false;
+            this.dataGridViewPosts.AllowUserToAddRows = false;
+            this.dataGridViewPosts.AllowUserToDeleteRows = false;
+            this.dataGridViewPosts.AllowUserToResizeColumns = false;
+            this.dataGridViewPosts.AllowUserToResizeRows = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewMessages.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewMessages.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewMessages.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridViewMessages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMessages.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ThemeMessages,
-            this.SectionMessages,
-            this.AutorMessages,
-            this.DateMessages});
-            this.dataGridViewMessages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewMessages.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridViewMessages.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewMessages.MultiSelect = false;
-            this.dataGridViewMessages.Name = "dataGridViewMessages";
-            this.dataGridViewMessages.ReadOnly = true;
-            this.dataGridViewMessages.RowHeadersVisible = false;
+            this.dataGridViewPosts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewPosts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewPosts.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridViewPosts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPosts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ThemePosts,
+            this.SectionPosts,
+            this.AutorPosts,
+            this.DatePosts});
+            this.dataGridViewPosts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewPosts.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridViewPosts.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewPosts.MultiSelect = false;
+            this.dataGridViewPosts.Name = "dataGridViewPosts";
+            this.dataGridViewPosts.ReadOnly = true;
+            this.dataGridViewPosts.RowHeadersVisible = false;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewMessages.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewMessages.Size = new System.Drawing.Size(746, 287);
-            this.dataGridViewMessages.TabIndex = 0;
-            this.dataGridViewMessages.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMessages_CellContentClick);
+            this.dataGridViewPosts.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewPosts.Size = new System.Drawing.Size(746, 287);
+            this.dataGridViewPosts.TabIndex = 0;
+            this.dataGridViewPosts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPosts_CellContentClick);
             // 
-            // ThemeMessages
+            // ThemePosts
             // 
-            this.ThemeMessages.FillWeight = 220F;
-            this.ThemeMessages.HeaderText = "Тема";
-            this.ThemeMessages.Name = "ThemeMessages";
-            this.ThemeMessages.ReadOnly = true;
+            this.ThemePosts.FillWeight = 220F;
+            this.ThemePosts.HeaderText = "Тема";
+            this.ThemePosts.Name = "ThemePosts";
+            this.ThemePosts.ReadOnly = true;
             // 
-            // SectionMessages
+            // SectionPosts
             // 
-            this.SectionMessages.HeaderText = "Раздел";
-            this.SectionMessages.Name = "SectionMessages";
-            this.SectionMessages.ReadOnly = true;
+            this.SectionPosts.HeaderText = "Раздел";
+            this.SectionPosts.Name = "SectionPosts";
+            this.SectionPosts.ReadOnly = true;
             // 
-            // AutorMessages
+            // AutorPosts
             // 
-            this.AutorMessages.FillWeight = 70F;
-            this.AutorMessages.HeaderText = "Автор";
-            this.AutorMessages.Name = "AutorMessages";
-            this.AutorMessages.ReadOnly = true;
+            this.AutorPosts.FillWeight = 70F;
+            this.AutorPosts.HeaderText = "Автор";
+            this.AutorPosts.Name = "AutorPosts";
+            this.AutorPosts.ReadOnly = true;
             // 
-            // DateMessages
+            // DatePosts
             // 
-            this.DateMessages.FillWeight = 70F;
-            this.DateMessages.HeaderText = "Дата";
-            this.DateMessages.Name = "DateMessages";
-            this.DateMessages.ReadOnly = true;
+            this.DatePosts.FillWeight = 70F;
+            this.DatePosts.HeaderText = "Дата";
+            this.DatePosts.Name = "DatePosts";
+            this.DatePosts.ReadOnly = true;
             // 
             // tabPageNews
             // 
@@ -852,8 +852,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopics)).EndInit();
             this.tabControlDataGrid.ResumeLayout(false);
             this.tabPageTopics.ResumeLayout(false);
-            this.tabPageMessages.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessages)).EndInit();
+            this.tabPagePosts.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPosts)).EndInit();
             this.tabPageNews.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNews)).EndInit();
             this.tabPagePublications.ResumeLayout(false);
@@ -908,8 +908,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem опрограммеToolStripMenuItem;
         private System.Windows.Forms.Button buttonUpdate;
-        private System.Windows.Forms.TabPage tabPageMessages;
-        private System.Windows.Forms.DataGridView dataGridViewMessages;
+        private System.Windows.Forms.TabPage tabPagePosts;
+        private System.Windows.Forms.DataGridView dataGridViewPosts;
         private System.Windows.Forms.Label labelNewTopics;
         private System.Windows.Forms.Label labelNewPosts;
         private System.Windows.Forms.Label labelNews;
@@ -922,10 +922,10 @@
         private System.Windows.Forms.Label labelNewPublicationsCount;
         private System.Windows.Forms.Label labelNewAdsCount;
         private System.Windows.Forms.DataGridView dataGridViewNews;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThemeMessages;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SectionMessages;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AutorMessages;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateMessages;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThemePosts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SectionPosts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AutorPosts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DatePosts;
         private System.Windows.Forms.DataGridViewLinkColumn ThemeTopics;
         private System.Windows.Forms.DataGridViewTextBoxColumn SectionTopics;
         private System.Windows.Forms.DataGridViewTextBoxColumn AutorTopics;

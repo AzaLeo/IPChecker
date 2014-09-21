@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 using IPChecker.Properties;
+using System.Collections.Generic;
 
 namespace IPChecker
 {
@@ -19,8 +20,8 @@ namespace IPChecker
             _forumRssDataGrid = new ForumRssDataGrid();
             _contentRssDataGrid = new ContentRssDataGrid();
             _adsRssDataGrid = new AdsRssDataGrid();
-            //UpdateRssDataGrid();
             SetSettings();
+            InitializeRssDataGrid();
         }
 
         private void SetSettings()
@@ -41,13 +42,28 @@ namespace IPChecker
             }
             else
             {
-                var key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
-                key.DeleteValue("IPChecker");
-                key.Close();
+                try
+                {
+                    var key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
+                    key.DeleteValue("IPChecker");
+                    key.Close();
+                }
+                catch (ArgumentException)
+                {
+                    return;
+                }
             }
         }
 
+        // Обновление по таймеру.
         void timerUpdate_Tick(object sender, EventArgs e)
+        {
+            UpdateRssDataGrid();
+        }
+
+
+        // Кнопка "обновить".
+        private void buttonUpdate_Click(object sender, EventArgs e)
         {
             UpdateRssDataGrid();
         }
@@ -61,11 +77,11 @@ namespace IPChecker
             }
         }
 
-        private void dataGridViewMessages_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewPosts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
             {
-                var clickCell = dataGridViewMessages.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                var clickCell = dataGridViewPosts.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 System.Diagnostics.Process.Start((string)clickCell.Tag);
             }
         }
@@ -97,26 +113,91 @@ namespace IPChecker
             }
         }
 
+        // Заполнение всех DataGrid при старте приложения.
+        private void InitializeRssDataGrid()
+        {
+            AddNewRowsTopics(_forumRssDataGrid.GetTopics());
+            AddNewRowsPosts(_forumRssDataGrid.GetPosts());
+            AddNewRowsNews(_contentRssDataGrid.GetNews());
+            AddNewRowsPublications(_contentRssDataGrid.GetPublications());
+            AddNewRowsAds(_adsRssDataGrid.GetAds());
+            labelTimeUpdate.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        // Обновление данных и определение количества новых записей.
         private void UpdateRssDataGrid()
         {
-            labelTimeUpdate.Text = DateTime.Now.ToString("HH:mm:ss");
-            dataGridViewTopics.Rows.Clear();
-            dataGridViewTopics.Rows.AddRange(_forumRssDataGrid.GetTopics().ToArray());
-            dataGridViewMessages.Rows.Clear();
-            dataGridViewMessages.Rows.AddRange(_forumRssDataGrid.GetMessages().ToArray());
-            dataGridViewNews.Rows.Clear();
-            dataGridViewNews.Rows.AddRange(_contentRssDataGrid.GetNews().ToArray());
-            dataGridViewPublications.Rows.Clear();
-            dataGridViewPublications.Rows.AddRange(_contentRssDataGrid.GetPublications().ToArray());
-            dataGridViewAds.Rows.Clear();
-            dataGridViewAds.Rows.AddRange(_adsRssDataGrid.GetAds().ToArray());
-        }
+            var newRowsTopics = _forumRssDataGrid.GetTopics();
+            var newRowsPosts = _forumRssDataGrid.GetPosts();
+            var newRowsNews = _contentRssDataGrid.GetNews();
+            var newRowsPublications = _contentRssDataGrid.GetNews();
+            var newRowsAds = _adsRssDataGrid.GetAds();
+            var change = new NotifyChangeRss();
 
-        private void buttonUpdate_Click(object sender, EventArgs e)
+            if (change.CheckTopics(dataGridViewTopics.Rows[0], newRowsTopics) > 0)
+            {
+                labelNewTopicsCount.Text = change.NewTopicsCount;
+                AddNewRowsTopics(newRowsTopics);
+            }
+
+            if (change.CheckPosts(dataGridViewPosts.Rows[0], newRowsPosts) > 0)
+            {
+                labelNewPostsCount.Text = change.NewPostsCount;
+                AddNewRowsPosts(newRowsPosts);
+            }
+
+            if (change.CheckNews(dataGridViewNews.Rows[0], newRowsNews) > 0)
+            {
+                labelNewsCount.Text = change.NewsCount;
+                AddNewRowsNews(newRowsNews);
+            }
+
+            if (change.CheckPublications(dataGridViewPublications.Rows[0], newRowsPublications) > 0)
+            {
+                labelNewPublicationsCount.Text = change.NewPublicationsCount;
+                AddNewRowsPublications(newRowsPublications);
+            }
+
+            if (change.CheckAds(dataGridViewAds.Rows[0], newRowsAds) > 0)
+            {
+                labelNewAdsCount.Text = change.NewAdsCount;
+                AddNewRowsAds(newRowsAds);
+            }
+        }
+        
+        // Добавление новых строк в DataGridView.
+        //
+        private void AddNewRowsTopics(List<DataGridViewRow> newRows)
         {
-            UpdateRssDataGrid();
+            dataGridViewTopics.Rows.Clear();
+            dataGridViewTopics.Rows.AddRange(newRows.ToArray());
         }
 
+        private void AddNewRowsPosts(List<DataGridViewRow> newRows)
+        {
+            dataGridViewPosts.Rows.Clear();
+            dataGridViewPosts.Rows.AddRange(newRows.ToArray());
+        }
+
+        private void AddNewRowsNews(List<DataGridViewRow> newRows)
+        {
+            dataGridViewNews.Rows.Clear();
+            dataGridViewNews.Rows.AddRange(newRows.ToArray());
+        }
+
+        private void AddNewRowsPublications(List<DataGridViewRow> newRows)
+        {
+            dataGridViewPublications.Rows.Clear();
+            dataGridViewPublications.Rows.AddRange(newRows.ToArray());
+        }
+
+        private void AddNewRowsAds(List<DataGridViewRow> newRows)
+        {
+            dataGridViewAds.Rows.Clear();
+            dataGridViewAds.Rows.AddRange(newRows.ToArray());
+        }
+
+        // Пункт меню "настройки".
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var ipCheckerSettings = new IPCheckerSettings();
@@ -124,6 +205,7 @@ namespace IPChecker
             ipCheckerSettings.Show();
         }
 
+        // Обработчик события настроек.
         void _ipCheckerSettings_UpdateSettings(object sender, EventArgs e)
         {
             SetSettings();

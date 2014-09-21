@@ -27,7 +27,7 @@ namespace IPChecker
             comboBoxMinutes.DataSource = minutesUpdate;
             comboBoxMinutes.SelectedIndex = Settings.Default.IntervalUpdateValue;
             checkBoxTopics.Checked = Settings.Default.TrackEventTopics;
-            checkBoxMessages.Checked = Settings.Default.TrackEventMessages;
+            checkBoxPosts.Checked = Settings.Default.TrackEventPosts;
             checkBoxNews.Checked = Settings.Default.TrackEventNews;
             checkBoxPublications.Checked = Settings.Default.TrackEventPublications;
             checkBoxAds.Checked = Settings.Default.TrackEventAds;
@@ -42,7 +42,7 @@ namespace IPChecker
             Settings.Default.IntervalUpdate = checkBoxIntervalChecking.Checked;
             Settings.Default.IntervalUpdateValue = comboBoxMinutes.SelectedIndex;
             Settings.Default.TrackEventTopics = checkBoxTopics.Checked;
-            Settings.Default.TrackEventMessages = checkBoxMessages.Checked;
+            Settings.Default.TrackEventPosts = checkBoxPosts.Checked;
             Settings.Default.TrackEventNews = checkBoxNews.Checked;
             Settings.Default.TrackEventPublications = checkBoxPublications.Checked;
             Settings.Default.TrackEventAds = checkBoxAds.Checked;

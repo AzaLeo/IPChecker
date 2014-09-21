@@ -86,12 +86,12 @@ namespace IPChecker.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TrackEventMessages {
+        public bool TrackEventPosts {
             get {
-                return ((bool)(this["TrackEventMessages"]));
+                return ((bool)(this["TrackEventPosts"]));
             }
             set {
-                this["TrackEventMessages"] = value;
+                this["TrackEventPosts"] = value;
             }
         }
         

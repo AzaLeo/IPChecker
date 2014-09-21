@@ -18,7 +18,7 @@ namespace IPChecker
             return GetRssData(_feed);
         }
 
-        public List<DataGridViewRow> GetMessages()
+        public List<DataGridViewRow> GetPosts()
         {
             var _reader = XmlReader.Create("http://feeds.feedburner.com/infoport/newposts");
             var _feed = SyndicationFeed.Load(_reader);

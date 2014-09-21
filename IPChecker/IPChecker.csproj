@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="ForumRssDataGrid.cs" />
     <Compile Include="ContentRssDataGrid.cs" />
+    <Compile Include="NotifyChangeRss.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IPCheckerSettings.cs">
@@ -65,6 +66,7 @@
     <Compile Include="Settings.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
