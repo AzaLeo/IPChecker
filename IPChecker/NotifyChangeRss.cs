@@ -14,71 +14,72 @@ namespace IPChecker
         public string NewsCount { get; private set; }
         public string NewPublicationsCount { get; private set; }
         public string NewAdsCount { get; private set; }
-        private int i;
+        private int _i;
+        private const int _forumDateCell = 3, _contentDateCell = 1, _adsDateCell = 2;
 
         internal int CheckTopics(DataGridViewRow dataGridViewRow, List<DataGridViewRow> newRowsTopics)
         {
-            for (i = 0; i >= newRowsTopics.Count; i++)
+            for (_i = 0; _i <= newRowsTopics.Count; _i++)
             {
-                if (dataGridViewRow.Equals(newRowsTopics[i]))
+                if (dataGridViewRow.Cells[_forumDateCell].Value.Equals(newRowsTopics[_i].Cells[_forumDateCell].Value))
                 {
                     break;
                 }
             }
-            NewTopicsCount = i.ToString();
-            return i;
+            NewTopicsCount = _i.ToString();
+            return _i;
         }
 
         internal int CheckPosts(DataGridViewRow dataGridViewRow, List<DataGridViewRow> newRowsPosts)
         {
-            for (i = 0; i >= newRowsPosts.Count; i++)
+            for (_i = 0; _i <= newRowsPosts.Count; _i++)
             {
-                if (dataGridViewRow.Equals(newRowsPosts[i]))
+                if (dataGridViewRow.Cells[_forumDateCell].Value.Equals(newRowsPosts[_i].Cells[_forumDateCell].Value))
                 {
                     break;
                 }
             }
-            NewPostsCount = i.ToString();
-            return i;
+            NewPostsCount = _i.ToString();
+            return _i;
         }
 
         internal int CheckNews(DataGridViewRow dataGridViewRow, List<DataGridViewRow> newRowsNews)
         {
-            for (i = 0; i >= newRowsNews.Count; i++)
+            for (_i = 0; _i <= newRowsNews.Count; _i++)
             {
-                if (dataGridViewRow.Equals(newRowsNews[i]))
+                if (dataGridViewRow.Cells[_contentDateCell].Value.Equals(newRowsNews[_i].Cells[_contentDateCell].Value))
                 {
                     break;
                 }
             }
-            NewsCount = i.ToString();
-            return i;
+            NewsCount = _i.ToString();
+            return _i;
         }
 
         internal int CheckPublications(DataGridViewRow dataGridViewRow, List<DataGridViewRow> newRowsPublications)
         {
-            for (i = 0; i >= newRowsPublications.Count; i++)
+            for (_i = 0; _i <= newRowsPublications.Count; _i++)
             {
-                if (dataGridViewRow.Equals(newRowsPublications[i]))
+                if (dataGridViewRow.Cells[_contentDateCell].Value.Equals(newRowsPublications[_i].Cells[_contentDateCell].Value))
                 {
                     break;
                 }
             }
-            NewPublicationsCount = i.ToString();
-            return i;
+            NewPublicationsCount = _i.ToString();
+            return _i;
         }
 
         internal int CheckAds(DataGridViewRow dataGridViewRow, List<DataGridViewRow> newRowsAds)
         {
-            for (i = 0; i >= newRowsAds.Count; i++)
+            for (_i = 0; _i <= newRowsAds.Count; _i++)
             {
-                if (dataGridViewRow.Equals(newRowsAds[i]))
+                if (dataGridViewRow.Cells[_adsDateCell].Value.Equals(newRowsAds[_i].Cells[_adsDateCell].Value))
                 {
                     break;
                 }
             }
-            NewAdsCount = i.ToString();
-            return i;
+            NewAdsCount = _i.ToString();
+            return _i;
         }
     }
 }

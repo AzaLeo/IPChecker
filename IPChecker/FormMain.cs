@@ -163,6 +163,7 @@ namespace IPChecker
                 labelNewAdsCount.Text = change.NewAdsCount;
                 AddNewRowsAds(newRowsAds);
             }
+            labelTimeUpdate.Text = DateTime.Now.ToString("HH:mm:ss");
         }
         
         // Добавление новых строк в DataGridView.

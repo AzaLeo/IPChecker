@@ -11,7 +11,7 @@ namespace IPChecker
 {
     class AdsRssDataGrid
     {
-        public List<DataGridViewRow> GetAds()
+        internal List<DataGridViewRow> GetAds()
         {
             var _reader = XmlReader.Create("http://feeds.feedburner.com/infoport/ads");
             var _feed = SyndicationFeed.Load(_reader);

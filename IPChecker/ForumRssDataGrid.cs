@@ -11,14 +11,14 @@ namespace IPChecker
 {
     class ForumRssDataGrid
     {
-        public List<DataGridViewRow> GetTopics()
+        internal List<DataGridViewRow> GetTopics()
         {
             var _reader = XmlReader.Create("http://feeds.feedburner.com/infoport/newtopics");
             var _feed = SyndicationFeed.Load(_reader);
             return GetRssData(_feed);
         }
 
-        public List<DataGridViewRow> GetPosts()
+        internal List<DataGridViewRow> GetPosts()
         {
             var _reader = XmlReader.Create("http://feeds.feedburner.com/infoport/newposts");
             var _feed = SyndicationFeed.Load(_reader);

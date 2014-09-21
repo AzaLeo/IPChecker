@@ -11,14 +11,14 @@ namespace IPChecker
 {
     class ContentRssDataGrid
     {
-        public List<DataGridViewRow> GetNews()
+        internal List<DataGridViewRow> GetNews()
         {
             var _reader = XmlReader.Create("http://feeds.feedburner.com/infoport/news");
             var _feed = SyndicationFeed.Load(_reader);
             return GetRssData(_feed);
         }
-        
-        public List<DataGridViewRow> GetPublications()
+
+        internal List<DataGridViewRow> GetPublications()
         {
             var _reader = XmlReader.Create("http://feeds.feedburner.com/infoport/publications");
             var _feed = SyndicationFeed.Load(_reader);
