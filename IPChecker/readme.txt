@@ -28,12 +28,44 @@
 - запускать при старте
 
 ---------- TODO ----------
-применить настройки к приложению
-	применили событие, задействовать остальные настройки
-	делаем автозагрузку
+	цвет количества новых элементов красным
+обнуление при прочтении
+	добавление количества при всех последующих обновлениях
+выбор, какие события отслеживать, сделать программно
+настроить значок в трее (только в трее, убрать из панели задач)
 сделать сегодняшние/вчерашние даты как "сегодня" и "вчера".
 сделать один метод для всех событий клика по ссылкам
 
 Описание:
 когда хочется узнать о последних события, не заходят на сайт и даже не открывая браузер
 если у вас стоит галочка автоматический вход и вы ходите знать о послених события, но при этом не "светиться" на форуме
+
+
+---------- один обработчик для всех кликов ----------
+
+DataGridView d = sender as DataGridView;
+
+            if (e.ColumnIndex == 0 && d != null)
+            {
+                DataGridViewCell clickCell = new DataGridViewLinkCell();
+
+                switch (d.Name)
+                {
+                    case "dataGridViewTopics":
+                        clickCell = dataGridViewTopics.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        break;
+                    case "dataGridViewPosts":
+                        clickCell = dataGridViewPosts.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        break;
+                    case "dataGridViewNews":
+                        clickCell = dataGridViewNews.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        break;
+                    case "dataGridViewPublications":
+                        clickCell = dataGridViewPublications.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        break;
+                    case "dataGridViewAds":
+                        clickCell = dataGridViewAds.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        break;
+                }
+                System.Diagnostics.Process.Start((string)clickCell.Tag);
+            }

@@ -9,11 +9,11 @@ namespace IPChecker
 {
     class NotifyChangeRss
     {
-        public string NewTopicsCount { get; private set; }
-        public string NewPostsCount { get; private set; }
-        public string NewsCount { get; private set; }
-        public string NewPublicationsCount { get; private set; }
-        public string NewAdsCount { get; private set; }
+        public int NewTopicsCount { get; private set; }
+        public int NewPostsCount { get; private set; }
+        public int NewsCount { get; private set; }
+        public int NewPublicationsCount { get; private set; }
+        public int NewAdsCount { get; private set; }
         private int _i;
         private const int _forumDateCell = 3, _contentDateCell = 1, _adsDateCell = 2;
 
@@ -26,8 +26,7 @@ namespace IPChecker
                     break;
                 }
             }
-            NewTopicsCount = _i.ToString();
-            return _i;
+            return NewTopicsCount += _i;
         }
 
         internal int CheckPosts(DataGridViewRow dataGridViewRow, List<DataGridViewRow> newRowsPosts)
@@ -39,8 +38,7 @@ namespace IPChecker
                     break;
                 }
             }
-            NewPostsCount = _i.ToString();
-            return _i;
+            return NewPostsCount += _i;
         }
 
         internal int CheckNews(DataGridViewRow dataGridViewRow, List<DataGridViewRow> newRowsNews)
@@ -52,8 +50,7 @@ namespace IPChecker
                     break;
                 }
             }
-            NewsCount = _i.ToString();
-            return _i;
+            return NewsCount += _i;
         }
 
         internal int CheckPublications(DataGridViewRow dataGridViewRow, List<DataGridViewRow> newRowsPublications)
@@ -65,8 +62,7 @@ namespace IPChecker
                     break;
                 }
             }
-            NewPublicationsCount = _i.ToString();
-            return _i;
+            return NewPublicationsCount += _i;
         }
 
         internal int CheckAds(DataGridViewRow dataGridViewRow, List<DataGridViewRow> newRowsAds)
@@ -78,8 +74,7 @@ namespace IPChecker
                     break;
                 }
             }
-            NewAdsCount = _i.ToString();
-            return _i;
+            return NewAdsCount += _i;
         }
     }
 }

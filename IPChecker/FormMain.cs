@@ -6,6 +6,8 @@ using System.Xml.Linq;
 using IPChecker.Properties;
 using System.Collections.Generic;
 using System.Media;
+using Microsoft.Win32;
+using System.Drawing;
 
 namespace IPChecker
 {
@@ -14,7 +16,8 @@ namespace IPChecker
         private ForumRssDataGrid _forumRssDataGrid;
         private ContentRssDataGrid _contentRssDataGrid;
         private AdsRssDataGrid _adsRssDataGrid;
-        private SoundPlayer _sound;
+        private SoundPlayer _notifySound;
+        private NotifyChangeRss _notifyChangeRss;
 
         public FormMain()
         {
@@ -22,11 +25,13 @@ namespace IPChecker
             _forumRssDataGrid = new ForumRssDataGrid();
             _contentRssDataGrid = new ContentRssDataGrid();
             _adsRssDataGrid = new AdsRssDataGrid();
-            _sound = new SoundPlayer(Resources.DefaultSound);
+            _notifySound = new SoundPlayer(Resources.DefaultSound);
+            _notifyChangeRss = new NotifyChangeRss();
             SetSettings();
             InitializeRssDataGrid();
         }
 
+        // Установка настроек.
         private void SetSettings()
         {
             var settings = new IPCheckerSettings();
@@ -39,7 +44,7 @@ namespace IPChecker
             }
             if (Settings.Default.RunSystemStart)
             {
-                var key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
+                var key = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
                 key.SetValue("IPChecker", Application.ExecutablePath);
                 key.Close();
             }
@@ -47,7 +52,7 @@ namespace IPChecker
             {
                 try
                 {
-                    var key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
+                    var key = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
                     key.DeleteValue("IPChecker");
                     key.Close();
                 }
@@ -71,6 +76,8 @@ namespace IPChecker
             UpdateRssDataGrid();
         }
 
+        // Обработчики перехода по ссылкам.
+        //
         private void dataGridViewTopics_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
@@ -135,48 +142,53 @@ namespace IPChecker
             var newRowsNews = _contentRssDataGrid.GetNews();
             var newRowsPublications = _contentRssDataGrid.GetPublications();
             var newRowsAds = _adsRssDataGrid.GetAds();
-            var change = new NotifyChangeRss();
-            int haveUpdate = 0;
+            var haveUpdate = 0;
 
-            if (change.CheckTopics(dataGridViewTopics.Rows[0], newRowsTopics) > 0)
+            if (_notifyChangeRss.CheckTopics(dataGridViewTopics.Rows[0], newRowsTopics) > 0)
             {
                 haveUpdate++;
-                labelNewTopicsCount.Text = change.NewTopicsCount;
+                labelNewTopicsCount.Text = _notifyChangeRss.NewTopicsCount.ToString();
+                labelNewTopicsCount.ForeColor = Color.Red;
                 AddNewRowsTopics(newRowsTopics);
             }
 
-            if (change.CheckPosts(dataGridViewPosts.Rows[0], newRowsPosts) > 0)
+            if (_notifyChangeRss.CheckPosts(dataGridViewPosts.Rows[0], newRowsPosts) > 0)
             {
                 haveUpdate++;
-                labelNewPostsCount.Text = change.NewPostsCount;
+                labelNewPostsCount.Text = _notifyChangeRss.NewPostsCount.ToString();
+                labelNewPostsCount.ForeColor = Color.Red;
                 AddNewRowsPosts(newRowsPosts);
             }
 
-            if (change.CheckNews(dataGridViewNews.Rows[0], newRowsNews) > 0)
+            if (_notifyChangeRss.CheckNews(dataGridViewNews.Rows[0], newRowsNews) > 0)
             {
                 haveUpdate++;
-                labelNewsCount.Text = change.NewsCount;
+                labelNewsCount.Text = _notifyChangeRss.NewsCount.ToString();
+                labelNewsCount.ForeColor = Color.Red;
                 AddNewRowsNews(newRowsNews);
             }
 
-            if (change.CheckPublications(dataGridViewPublications.Rows[0], newRowsPublications) > 0)
+            if (_notifyChangeRss.CheckPublications(dataGridViewPublications.Rows[0], newRowsPublications) > 0)
             {
                 haveUpdate++;
-                labelNewPublicationsCount.Text = change.NewPublicationsCount;
+                labelNewPublicationsCount.Text = _notifyChangeRss.NewPublicationsCount.ToString();
+                labelNewPublicationsCount.ForeColor = Color.Red;
                 AddNewRowsPublications(newRowsPublications);
             }
 
-            if (change.CheckAds(dataGridViewAds.Rows[0], newRowsAds) > 0)
+            if (_notifyChangeRss.CheckAds(dataGridViewAds.Rows[0], newRowsAds) > 0)
             {
                 haveUpdate++;
-                labelNewAdsCount.Text = change.NewAdsCount;
+                labelNewAdsCount.Text = _notifyChangeRss.NewAdsCount.ToString();
+                labelNewAdsCount.ForeColor = Color.Red;
                 AddNewRowsAds(newRowsAds);
             }
+
             labelTimeUpdate.Text = DateTime.Now.ToString("HH:mm:ss");
 
-            if (Settings.Default.SoundNotification)
+            if (Settings.Default.SoundNotification && haveUpdate > 0)
             {
-                _sound.Play();
+                _notifySound.Play();
             }
         }
         
