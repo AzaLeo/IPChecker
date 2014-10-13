@@ -116,7 +116,7 @@
             this.groupBoxTrackEvents.Size = new System.Drawing.Size(238, 146);
             this.groupBoxTrackEvents.TabIndex = 6;
             this.groupBoxTrackEvents.TabStop = false;
-            this.groupBoxTrackEvents.Text = "Отслеживать события";
+            this.groupBoxTrackEvents.Text = "Оповещать о событиях";
             // 
             // checkBoxAds
             // 

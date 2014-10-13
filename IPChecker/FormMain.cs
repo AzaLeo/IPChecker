@@ -18,6 +18,7 @@ namespace IPChecker
         private AdsRssDataGrid _adsRssDataGrid;
         private SoundPlayer _notifySound;
         private NotifyChangeRss _notifyChangeRss;
+        private FormWindowState _OldFormState;
 
         public FormMain()
         {
@@ -144,7 +145,7 @@ namespace IPChecker
             var newRowsAds = _adsRssDataGrid.GetAds();
             var haveUpdate = 0;
 
-            if (_notifyChangeRss.CheckTopics(dataGridViewTopics.Rows[0], newRowsTopics) > 0)
+            if (Settings.Default.TrackEventTopics && _notifyChangeRss.CheckTopics(dataGridViewTopics.Rows[0], newRowsTopics) > 0)
             {
                 haveUpdate++;
                 labelNewTopicsCount.Text = _notifyChangeRss.NewTopicsCount.ToString();
@@ -152,7 +153,7 @@ namespace IPChecker
                 AddNewRowsTopics(newRowsTopics);
             }
 
-            if (_notifyChangeRss.CheckPosts(dataGridViewPosts.Rows[0], newRowsPosts) > 0)
+            if (Settings.Default.TrackEventPosts && _notifyChangeRss.CheckPosts(dataGridViewPosts.Rows[0], newRowsPosts) > 0)
             {
                 haveUpdate++;
                 labelNewPostsCount.Text = _notifyChangeRss.NewPostsCount.ToString();
@@ -160,7 +161,7 @@ namespace IPChecker
                 AddNewRowsPosts(newRowsPosts);
             }
 
-            if (_notifyChangeRss.CheckNews(dataGridViewNews.Rows[0], newRowsNews) > 0)
+            if (Settings.Default.TrackEventNews && _notifyChangeRss.CheckNews(dataGridViewNews.Rows[0], newRowsNews) > 0)
             {
                 haveUpdate++;
                 labelNewsCount.Text = _notifyChangeRss.NewsCount.ToString();
@@ -168,7 +169,7 @@ namespace IPChecker
                 AddNewRowsNews(newRowsNews);
             }
 
-            if (_notifyChangeRss.CheckPublications(dataGridViewPublications.Rows[0], newRowsPublications) > 0)
+            if (Settings.Default.TrackEventPublications && _notifyChangeRss.CheckPublications(dataGridViewPublications.Rows[0], newRowsPublications) > 0)
             {
                 haveUpdate++;
                 labelNewPublicationsCount.Text = _notifyChangeRss.NewPublicationsCount.ToString();
@@ -176,7 +177,7 @@ namespace IPChecker
                 AddNewRowsPublications(newRowsPublications);
             }
 
-            if (_notifyChangeRss.CheckAds(dataGridViewAds.Rows[0], newRowsAds) > 0)
+            if (Settings.Default.TrackEventAds && _notifyChangeRss.CheckAds(dataGridViewAds.Rows[0], newRowsAds) > 0)
             {
                 haveUpdate++;
                 labelNewAdsCount.Text = _notifyChangeRss.NewAdsCount.ToString();
@@ -191,7 +192,7 @@ namespace IPChecker
                 _notifySound.Play();
             }
         }
-        
+
         // Добавление новых строк в DataGridView.
         //
         private void AddNewRowsTopics(List<DataGridViewRow> newRows)
@@ -236,6 +237,24 @@ namespace IPChecker
         void _ipCheckerSettings_UpdateSettings(object sender, EventArgs e)
         {
             SetSettings();
+        }
+
+        // Сворачивание программы кликом по иконке в трее.
+        private void notifyIconIP_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                if (WindowState == FormWindowState.Normal || WindowState == FormWindowState.Maximized)
+                {
+                    _OldFormState = WindowState;
+                    WindowState = FormWindowState.Minimized;
+                }
+                else
+                {
+                    Show();
+                    WindowState = _OldFormState;
+                }
+            }
         }
 
     }
