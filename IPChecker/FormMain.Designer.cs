@@ -29,17 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewTopics = new System.Windows.Forms.DataGridView();
             this.ThemeTopics = new System.Windows.Forms.DataGridViewLinkColumn();
             this.SectionTopics = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,8 +114,22 @@
             this.labelNewAdsCount = new System.Windows.Forms.Label();
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.labelTimeUpdate = new System.Windows.Forms.Label();
-            this.buttonUpdate = new System.Windows.Forms.Button();
             this.notifyIconIP = new System.Windows.Forms.NotifyIcon(this.components);
+            this.buttonCleanCount = new System.Windows.Forms.Button();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.tabPagePoliceNews = new System.Windows.Forms.TabPage();
+            this.tabPageTaxNews = new System.Windows.Forms.TabPage();
+            this.dataGridViewPoliceNews = new System.Windows.Forms.DataGridView();
+            this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTaxNews = new System.Windows.Forms.DataGridView();
+            this.dataGridViewLinkColumn2 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelPoliceNews = new System.Windows.Forms.Label();
+            this.labelPoliceNewsCount = new System.Windows.Forms.Label();
+            this.labelTaxNews = new System.Windows.Forms.Label();
+            this.labelTaxNewsCount = new System.Windows.Forms.Label();
+            this.toolTipMain = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopics)).BeginInit();
             this.tabControlDataGrid.SuspendLayout();
             this.tabPageTopics.SuspendLayout();
@@ -125,6 +143,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAds)).BeginInit();
             this.menuStripMain.SuspendLayout();
             this.groupBoxNewEvents.SuspendLayout();
+            this.tabPagePoliceNews.SuspendLayout();
+            this.tabPageTaxNews.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPoliceNews)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTaxNews)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewTopics
@@ -133,10 +155,10 @@
             this.dataGridViewTopics.AllowUserToDeleteRows = false;
             this.dataGridViewTopics.AllowUserToResizeColumns = false;
             this.dataGridViewTopics.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTopics.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTopics.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
             this.dataGridViewTopics.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewTopics.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridViewTopics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -152,12 +174,12 @@
             this.dataGridViewTopics.Name = "dataGridViewTopics";
             this.dataGridViewTopics.ReadOnly = true;
             this.dataGridViewTopics.RowHeadersVisible = false;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTopics.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTopics.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.dataGridViewTopics.Size = new System.Drawing.Size(746, 287);
             this.dataGridViewTopics.TabIndex = 3;
-            this.dataGridViewTopics.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTopics_CellContentClick);
+            this.dataGridViewTopics.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // ThemeTopics
             // 
@@ -194,6 +216,8 @@
             this.tabControlDataGrid.Controls.Add(this.tabPagePosts);
             this.tabControlDataGrid.Controls.Add(this.tabPageNews);
             this.tabControlDataGrid.Controls.Add(this.tabPagePublications);
+            this.tabControlDataGrid.Controls.Add(this.tabPagePoliceNews);
+            this.tabControlDataGrid.Controls.Add(this.tabPageTaxNews);
             this.tabControlDataGrid.Controls.Add(this.tabPageAds);
             this.tabControlDataGrid.Location = new System.Drawing.Point(12, 28);
             this.tabControlDataGrid.Name = "tabControlDataGrid";
@@ -230,10 +254,10 @@
             this.dataGridViewPosts.AllowUserToDeleteRows = false;
             this.dataGridViewPosts.AllowUserToResizeColumns = false;
             this.dataGridViewPosts.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewPosts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewPosts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
             this.dataGridViewPosts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewPosts.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridViewPosts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -249,12 +273,12 @@
             this.dataGridViewPosts.Name = "dataGridViewPosts";
             this.dataGridViewPosts.ReadOnly = true;
             this.dataGridViewPosts.RowHeadersVisible = false;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewPosts.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewPosts.RowsDefaultCellStyle = dataGridViewCellStyle32;
             this.dataGridViewPosts.Size = new System.Drawing.Size(746, 287);
             this.dataGridViewPosts.TabIndex = 0;
-            this.dataGridViewPosts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPosts_CellContentClick);
+            this.dataGridViewPosts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // ThemePosts
             // 
@@ -300,10 +324,10 @@
             this.dataGridViewNews.AllowUserToDeleteRows = false;
             this.dataGridViewNews.AllowUserToResizeColumns = false;
             this.dataGridViewNews.AllowUserToResizeRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewNews.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewNews.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
             this.dataGridViewNews.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewNews.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridViewNews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -317,13 +341,13 @@
             this.dataGridViewNews.Name = "dataGridViewNews";
             this.dataGridViewNews.ReadOnly = true;
             this.dataGridViewNews.RowHeadersVisible = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewNews.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewNews.RowsDefaultCellStyle = dataGridViewCellStyle34;
             this.dataGridViewNews.Size = new System.Drawing.Size(746, 287);
             this.dataGridViewNews.TabIndex = 0;
-            this.dataGridViewNews.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNews_CellContentClick);
+            this.dataGridViewNews.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // TitleNews
             // 
@@ -358,10 +382,10 @@
             this.dataGridViewPublications.AllowUserToDeleteRows = false;
             this.dataGridViewPublications.AllowUserToResizeColumns = false;
             this.dataGridViewPublications.AllowUserToResizeRows = false;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewPublications.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewPublications.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle35;
             this.dataGridViewPublications.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewPublications.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridViewPublications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -375,13 +399,13 @@
             this.dataGridViewPublications.Name = "dataGridViewPublications";
             this.dataGridViewPublications.ReadOnly = true;
             this.dataGridViewPublications.RowHeadersVisible = false;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewPublications.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewPublications.RowsDefaultCellStyle = dataGridViewCellStyle36;
             this.dataGridViewPublications.Size = new System.Drawing.Size(746, 287);
             this.dataGridViewPublications.TabIndex = 1;
-            this.dataGridViewPublications.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPublications_CellContentClick);
+            this.dataGridViewPublications.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // TitlePublications
             // 
@@ -415,10 +439,10 @@
             this.dataGridViewAds.AllowUserToDeleteRows = false;
             this.dataGridViewAds.AllowUserToResizeColumns = false;
             this.dataGridViewAds.AllowUserToResizeRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewAds.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewAds.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
             this.dataGridViewAds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewAds.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridViewAds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -433,12 +457,12 @@
             this.dataGridViewAds.Name = "dataGridViewAds";
             this.dataGridViewAds.ReadOnly = true;
             this.dataGridViewAds.RowHeadersVisible = false;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewAds.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewAds.RowsDefaultCellStyle = dataGridViewCellStyle38;
             this.dataGridViewAds.Size = new System.Drawing.Size(746, 287);
             this.dataGridViewAds.TabIndex = 1;
-            this.dataGridViewAds.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAds_CellContentClick);
+            this.dataGridViewAds.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // TitleAds
             // 
@@ -707,7 +731,7 @@
             // labelNewTopics
             // 
             this.labelNewTopics.AutoSize = true;
-            this.labelNewTopics.Location = new System.Drawing.Point(11, 16);
+            this.labelNewTopics.Location = new System.Drawing.Point(11, 17);
             this.labelNewTopics.Name = "labelNewTopics";
             this.labelNewTopics.Size = new System.Drawing.Size(37, 13);
             this.labelNewTopics.TabIndex = 1;
@@ -716,7 +740,7 @@
             // labelNewPosts
             // 
             this.labelNewPosts.AutoSize = true;
-            this.labelNewPosts.Location = new System.Drawing.Point(88, 16);
+            this.labelNewPosts.Location = new System.Drawing.Point(94, 17);
             this.labelNewPosts.Name = "labelNewPosts";
             this.labelNewPosts.Size = new System.Drawing.Size(67, 13);
             this.labelNewPosts.TabIndex = 2;
@@ -725,7 +749,7 @@
             // labelNews
             // 
             this.labelNews.AutoSize = true;
-            this.labelNews.Location = new System.Drawing.Point(204, 16);
+            this.labelNews.Location = new System.Drawing.Point(207, 17);
             this.labelNews.Name = "labelNews";
             this.labelNews.Size = new System.Drawing.Size(51, 13);
             this.labelNews.TabIndex = 3;
@@ -734,7 +758,7 @@
             // labelNewPublications
             // 
             this.labelNewPublications.AutoSize = true;
-            this.labelNewPublications.Location = new System.Drawing.Point(307, 16);
+            this.labelNewPublications.Location = new System.Drawing.Point(304, 17);
             this.labelNewPublications.Name = "labelNewPublications";
             this.labelNewPublications.Size = new System.Drawing.Size(69, 13);
             this.labelNewPublications.TabIndex = 4;
@@ -743,7 +767,7 @@
             // labelNewAds
             // 
             this.labelNewAds.AutoSize = true;
-            this.labelNewAds.Location = new System.Drawing.Point(427, 16);
+            this.labelNewAds.Location = new System.Drawing.Point(631, 17);
             this.labelNewAds.Name = "labelNewAds";
             this.labelNewAds.Size = new System.Drawing.Size(71, 13);
             this.labelNewAds.TabIndex = 5;
@@ -751,8 +775,12 @@
             // 
             // groupBoxNewEvents
             // 
+            this.groupBoxNewEvents.Controls.Add(this.labelTaxNewsCount);
+            this.groupBoxNewEvents.Controls.Add(this.labelPoliceNewsCount);
+            this.groupBoxNewEvents.Controls.Add(this.labelTaxNews);
             this.groupBoxNewEvents.Controls.Add(this.labelNewTopicsCount);
             this.groupBoxNewEvents.Controls.Add(this.labelNewPostsCount);
+            this.groupBoxNewEvents.Controls.Add(this.labelPoliceNews);
             this.groupBoxNewEvents.Controls.Add(this.labelNewsCount);
             this.groupBoxNewEvents.Controls.Add(this.labelNewPublicationsCount);
             this.groupBoxNewEvents.Controls.Add(this.labelNewAdsCount);
@@ -763,7 +791,7 @@
             this.groupBoxNewEvents.Controls.Add(this.labelNewPosts);
             this.groupBoxNewEvents.Location = new System.Drawing.Point(12, 353);
             this.groupBoxNewEvents.Name = "groupBoxNewEvents";
-            this.groupBoxNewEvents.Size = new System.Drawing.Size(528, 36);
+            this.groupBoxNewEvents.Size = new System.Drawing.Size(726, 40);
             this.groupBoxNewEvents.TabIndex = 13;
             this.groupBoxNewEvents.TabStop = false;
             this.groupBoxNewEvents.Text = "Новые события";
@@ -771,7 +799,7 @@
             // labelNewTopicsCount
             // 
             this.labelNewTopicsCount.AutoSize = true;
-            this.labelNewTopicsCount.Location = new System.Drawing.Point(44, 16);
+            this.labelNewTopicsCount.Location = new System.Drawing.Point(45, 17);
             this.labelNewTopicsCount.Name = "labelNewTopicsCount";
             this.labelNewTopicsCount.Size = new System.Drawing.Size(13, 13);
             this.labelNewTopicsCount.TabIndex = 4;
@@ -780,7 +808,7 @@
             // labelNewPostsCount
             // 
             this.labelNewPostsCount.AutoSize = true;
-            this.labelNewPostsCount.Location = new System.Drawing.Point(152, 16);
+            this.labelNewPostsCount.Location = new System.Drawing.Point(158, 17);
             this.labelNewPostsCount.Name = "labelNewPostsCount";
             this.labelNewPostsCount.Size = new System.Drawing.Size(13, 13);
             this.labelNewPostsCount.TabIndex = 5;
@@ -789,7 +817,7 @@
             // labelNewsCount
             // 
             this.labelNewsCount.AutoSize = true;
-            this.labelNewsCount.Location = new System.Drawing.Point(252, 16);
+            this.labelNewsCount.Location = new System.Drawing.Point(255, 17);
             this.labelNewsCount.Name = "labelNewsCount";
             this.labelNewsCount.Size = new System.Drawing.Size(13, 13);
             this.labelNewsCount.TabIndex = 6;
@@ -798,7 +826,7 @@
             // labelNewPublicationsCount
             // 
             this.labelNewPublicationsCount.AutoSize = true;
-            this.labelNewPublicationsCount.Location = new System.Drawing.Point(373, 16);
+            this.labelNewPublicationsCount.Location = new System.Drawing.Point(370, 17);
             this.labelNewPublicationsCount.Name = "labelNewPublicationsCount";
             this.labelNewPublicationsCount.Size = new System.Drawing.Size(13, 13);
             this.labelNewPublicationsCount.TabIndex = 7;
@@ -807,7 +835,7 @@
             // labelNewAdsCount
             // 
             this.labelNewAdsCount.AutoSize = true;
-            this.labelNewAdsCount.Location = new System.Drawing.Point(495, 16);
+            this.labelNewAdsCount.Location = new System.Drawing.Point(699, 17);
             this.labelNewAdsCount.Name = "labelNewAdsCount";
             this.labelNewAdsCount.Size = new System.Drawing.Size(13, 13);
             this.labelNewAdsCount.TabIndex = 8;
@@ -827,6 +855,23 @@
             this.labelTimeUpdate.TabIndex = 14;
             this.labelTimeUpdate.Text = "label1";
             // 
+            // notifyIconIP
+            // 
+            this.notifyIconIP.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconIP.Icon")));
+            this.notifyIconIP.Text = "IPChecker";
+            this.notifyIconIP.Visible = true;
+            this.notifyIconIP.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconIP_MouseClick);
+            // 
+            // buttonCleanCount
+            // 
+            this.buttonCleanCount.Image = global::IPChecker.Properties.Resources.CleanCount;
+            this.buttonCleanCount.Location = new System.Drawing.Point(748, 363);
+            this.buttonCleanCount.Name = "buttonCleanCount";
+            this.buttonCleanCount.Size = new System.Drawing.Size(24, 24);
+            this.buttonCleanCount.TabIndex = 15;
+            this.buttonCleanCount.UseVisualStyleBackColor = true;
+            this.buttonCleanCount.Click += new System.EventHandler(this.buttonCleanCount_Click);
+            // 
             // buttonUpdate
             // 
             this.buttonUpdate.Image = global::IPChecker.Properties.Resources.update;
@@ -837,12 +882,153 @@
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
-            // notifyIconIP
+            // tabPagePoliceNews
             // 
-            this.notifyIconIP.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconIP.Icon")));
-            this.notifyIconIP.Text = "IPChecker";
-            this.notifyIconIP.Visible = true;
-            this.notifyIconIP.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconIP_MouseClick);
+            this.tabPagePoliceNews.Controls.Add(this.dataGridViewPoliceNews);
+            this.tabPagePoliceNews.Location = new System.Drawing.Point(4, 22);
+            this.tabPagePoliceNews.Name = "tabPagePoliceNews";
+            this.tabPagePoliceNews.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePoliceNews.Size = new System.Drawing.Size(752, 293);
+            this.tabPagePoliceNews.TabIndex = 5;
+            this.tabPagePoliceNews.Text = "Милиция";
+            this.tabPagePoliceNews.UseVisualStyleBackColor = true;
+            // 
+            // tabPageTaxNews
+            // 
+            this.tabPageTaxNews.Controls.Add(this.dataGridViewTaxNews);
+            this.tabPageTaxNews.Location = new System.Drawing.Point(4, 22);
+            this.tabPageTaxNews.Name = "tabPageTaxNews";
+            this.tabPageTaxNews.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageTaxNews.Size = new System.Drawing.Size(752, 293);
+            this.tabPageTaxNews.TabIndex = 6;
+            this.tabPageTaxNews.Text = "Налоговая";
+            this.tabPageTaxNews.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewPoliceNews
+            // 
+            this.dataGridViewPoliceNews.AllowUserToAddRows = false;
+            this.dataGridViewPoliceNews.AllowUserToDeleteRows = false;
+            this.dataGridViewPoliceNews.AllowUserToResizeColumns = false;
+            this.dataGridViewPoliceNews.AllowUserToResizeRows = false;
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewPoliceNews.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle39;
+            this.dataGridViewPoliceNews.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewPoliceNews.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridViewPoliceNews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPoliceNews.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewLinkColumn1,
+            this.dataGridViewTextBoxColumn1});
+            this.dataGridViewPoliceNews.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewPoliceNews.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridViewPoliceNews.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewPoliceNews.MultiSelect = false;
+            this.dataGridViewPoliceNews.Name = "dataGridViewPoliceNews";
+            this.dataGridViewPoliceNews.ReadOnly = true;
+            this.dataGridViewPoliceNews.RowHeadersVisible = false;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewPoliceNews.RowsDefaultCellStyle = dataGridViewCellStyle40;
+            this.dataGridViewPoliceNews.Size = new System.Drawing.Size(746, 287);
+            this.dataGridViewPoliceNews.TabIndex = 2;
+            // 
+            // dataGridViewLinkColumn1
+            // 
+            this.dataGridViewLinkColumn1.HeaderText = "Заголовок";
+            this.dataGridViewLinkColumn1.Name = "dataGridViewLinkColumn1";
+            this.dataGridViewLinkColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 20F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Дата";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTaxNews
+            // 
+            this.dataGridViewTaxNews.AllowUserToAddRows = false;
+            this.dataGridViewTaxNews.AllowUserToDeleteRows = false;
+            this.dataGridViewTaxNews.AllowUserToResizeColumns = false;
+            this.dataGridViewTaxNews.AllowUserToResizeRows = false;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTaxNews.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
+            this.dataGridViewTaxNews.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewTaxNews.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridViewTaxNews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTaxNews.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewLinkColumn2,
+            this.dataGridViewTextBoxColumn2});
+            this.dataGridViewTaxNews.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewTaxNews.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridViewTaxNews.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewTaxNews.MultiSelect = false;
+            this.dataGridViewTaxNews.Name = "dataGridViewTaxNews";
+            this.dataGridViewTaxNews.ReadOnly = true;
+            this.dataGridViewTaxNews.RowHeadersVisible = false;
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTaxNews.RowsDefaultCellStyle = dataGridViewCellStyle42;
+            this.dataGridViewTaxNews.Size = new System.Drawing.Size(746, 287);
+            this.dataGridViewTaxNews.TabIndex = 2;
+            // 
+            // dataGridViewLinkColumn2
+            // 
+            this.dataGridViewLinkColumn2.HeaderText = "Заголовок";
+            this.dataGridViewLinkColumn2.Name = "dataGridViewLinkColumn2";
+            this.dataGridViewLinkColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 20F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Дата";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // labelPoliceNews
+            // 
+            this.labelPoliceNews.AutoSize = true;
+            this.labelPoliceNews.Location = new System.Drawing.Point(420, 17);
+            this.labelPoliceNews.Name = "labelPoliceNews";
+            this.labelPoliceNews.Size = new System.Drawing.Size(54, 13);
+            this.labelPoliceNews.TabIndex = 9;
+            this.labelPoliceNews.Text = "милиция:";
+            // 
+            // labelPoliceNewsCount
+            // 
+            this.labelPoliceNewsCount.AutoSize = true;
+            this.labelPoliceNewsCount.Location = new System.Drawing.Point(471, 17);
+            this.labelPoliceNewsCount.Name = "labelPoliceNewsCount";
+            this.labelPoliceNewsCount.Size = new System.Drawing.Size(13, 13);
+            this.labelPoliceNewsCount.TabIndex = 10;
+            this.labelPoliceNewsCount.Text = "0";
+            // 
+            // labelTaxNews
+            // 
+            this.labelTaxNews.AutoSize = true;
+            this.labelTaxNews.Location = new System.Drawing.Point(521, 17);
+            this.labelTaxNews.Name = "labelTaxNews";
+            this.labelTaxNews.Size = new System.Drawing.Size(63, 13);
+            this.labelTaxNews.TabIndex = 11;
+            this.labelTaxNews.Text = "налоговая:";
+            // 
+            // labelTaxNewsCount
+            // 
+            this.labelTaxNewsCount.AutoSize = true;
+            this.labelTaxNewsCount.Location = new System.Drawing.Point(581, 17);
+            this.labelTaxNewsCount.Name = "labelTaxNewsCount";
+            this.labelTaxNewsCount.Size = new System.Drawing.Size(13, 13);
+            this.labelTaxNewsCount.TabIndex = 12;
+            this.labelTaxNewsCount.Text = "0";
             // 
             // FormMain
             // 
@@ -850,13 +1036,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(784, 402);
+            this.Controls.Add(this.buttonCleanCount);
             this.Controls.Add(this.labelTimeUpdate);
             this.Controls.Add(this.groupBoxNewEvents);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.tabControlDataGrid);
             this.Controls.Add(this.menuStripMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.Text = "IPChecker";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopics)).EndInit();
             this.tabControlDataGrid.ResumeLayout(false);
             this.tabPageTopics.ResumeLayout(false);
@@ -872,6 +1061,10 @@
             this.menuStripMain.PerformLayout();
             this.groupBoxNewEvents.ResumeLayout(false);
             this.groupBoxNewEvents.PerformLayout();
+            this.tabPagePoliceNews.ResumeLayout(false);
+            this.tabPageTaxNews.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPoliceNews)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTaxNews)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -951,6 +1144,20 @@
         private System.Windows.Forms.Label labelTimeUpdate;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon notifyIconIP;
+        private System.Windows.Forms.Button buttonCleanCount;
+        private System.Windows.Forms.TabPage tabPagePoliceNews;
+        private System.Windows.Forms.DataGridView dataGridViewPoliceNews;
+        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.TabPage tabPageTaxNews;
+        private System.Windows.Forms.DataGridView dataGridViewTaxNews;
+        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Label labelTaxNewsCount;
+        private System.Windows.Forms.Label labelTaxNews;
+        private System.Windows.Forms.Label labelPoliceNewsCount;
+        private System.Windows.Forms.Label labelPoliceNews;
+        private System.Windows.Forms.ToolTip toolTipMain;
     }
 }
 

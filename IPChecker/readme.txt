@@ -36,44 +36,16 @@
 - добавление количества новых элементов при всех последующих обновлениях
 
 ---------- TODO ----------
-
-обнуление счетчика событий при прочтении
-выбор, какие события отслеживать, сделать программно
+убрать нах ниндзю, добавить родной рсс только для некоторых разделов и в фидбурнер
 сделать отдельно налоговую и милицию
 настроить значок в трее (только в трее, убрать из панели задач)
 сделать сегодняшние/вчерашние даты как "сегодня" и "вчера"
-сделать один метод для всех событий клика по ссылкам
 некоторые классы сделать статическими
+проверить пункт "загружать при старте" - корректно устанавливалось исходя из настроек
+сделать sef ссылки
+развертывание (возможно, на сервере)
+оптимизировать
 
 Описание:
 когда хочется узнать о последних события, не заходят на сайт и даже не открывая браузер
 если у вас стоит галочка автоматический вход и вы ходите знать о послених события, но при этом не "светиться" на форуме
-
----------- один обработчик для всех кликов ----------
-
-DataGridView d = sender as DataGridView;
-
-            if (e.ColumnIndex == 0 && d != null)
-            {
-                DataGridViewCell clickCell = new DataGridViewLinkCell();
-
-                switch (d.Name)
-                {
-                    case "dataGridViewTopics":
-                        clickCell = dataGridViewTopics.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                        break;
-                    case "dataGridViewPosts":
-                        clickCell = dataGridViewPosts.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                        break;
-                    case "dataGridViewNews":
-                        clickCell = dataGridViewNews.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                        break;
-                    case "dataGridViewPublications":
-                        clickCell = dataGridViewPublications.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                        break;
-                    case "dataGridViewAds":
-                        clickCell = dataGridViewAds.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                        break;
-                }
-                System.Diagnostics.Process.Start((string)clickCell.Tag);
-            }

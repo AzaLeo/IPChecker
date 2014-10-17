@@ -25,6 +25,20 @@ namespace IPChecker
             return GetRssData(_feed);
         }
 
+        internal List<DataGridViewRow> GetPoliceNews()
+        {
+            var _reader = XmlReader.Create("http://feeds.feedburner.com/infoport/police");
+            var _feed = SyndicationFeed.Load(_reader);
+            return GetRssData(_feed);
+        }
+
+        internal List<DataGridViewRow> GetTaxNews()
+        {
+            var _reader = XmlReader.Create("http://feeds.feedburner.com/infoport/tax");
+            var _feed = SyndicationFeed.Load(_reader);
+            return GetRssData(_feed);
+        }
+
         private List<DataGridViewRow> GetRssData(SyndicationFeed _feed)
         {
             var _rowCollections = new List<DataGridViewRow>();
@@ -33,7 +47,7 @@ namespace IPChecker
             {
                 var newRow = new DataGridViewRow();
                 newRow.Cells.Add(new DataGridViewLinkCell() { Value = i.Title.Text, Tag = i.Id });
-                newRow.Cells.Add(new DataGridViewTextBoxCell() { Value = i.PublishDate.DateTime.ToString() });
+                newRow.Cells.Add(new DataGridViewTextBoxCell() { Value = i.PublishDate.LocalDateTime.ToString() });
                 _rowCollections.Add(newRow);
             }
             return _rowCollections;

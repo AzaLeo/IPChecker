@@ -42,13 +42,15 @@
             this.checkBoxTopics = new System.Windows.Forms.CheckBox();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.checkBoxPoliceNews = new System.Windows.Forms.CheckBox();
+            this.checkBoxTaxNews = new System.Windows.Forms.CheckBox();
             this.groupBoxTrackEvents.SuspendLayout();
             this.SuspendLayout();
             // 
             // checkBoxSoundNotification
             // 
             this.checkBoxSoundNotification.AutoSize = true;
-            this.checkBoxSoundNotification.Location = new System.Drawing.Point(12, 43);
+            this.checkBoxSoundNotification.Location = new System.Drawing.Point(12, 37);
             this.checkBoxSoundNotification.Name = "checkBoxSoundNotification";
             this.checkBoxSoundNotification.Size = new System.Drawing.Size(144, 17);
             this.checkBoxSoundNotification.TabIndex = 0;
@@ -59,7 +61,7 @@
             // 
             this.checkBoxPopUpNotifications.AutoSize = true;
             this.checkBoxPopUpNotifications.Enabled = false;
-            this.checkBoxPopUpNotifications.Location = new System.Drawing.Point(12, 66);
+            this.checkBoxPopUpNotifications.Location = new System.Drawing.Point(12, 60);
             this.checkBoxPopUpNotifications.Name = "checkBoxPopUpNotifications";
             this.checkBoxPopUpNotifications.Size = new System.Drawing.Size(170, 17);
             this.checkBoxPopUpNotifications.TabIndex = 1;
@@ -69,7 +71,7 @@
             // checkBoxIntervalChecking
             // 
             this.checkBoxIntervalChecking.AutoSize = true;
-            this.checkBoxIntervalChecking.Location = new System.Drawing.Point(12, 89);
+            this.checkBoxIntervalChecking.Location = new System.Drawing.Point(12, 83);
             this.checkBoxIntervalChecking.Name = "checkBoxIntervalChecking";
             this.checkBoxIntervalChecking.Size = new System.Drawing.Size(149, 17);
             this.checkBoxIntervalChecking.TabIndex = 2;
@@ -80,7 +82,7 @@
             // comboBoxMinutes
             // 
             this.comboBoxMinutes.FormattingEnabled = true;
-            this.comboBoxMinutes.Location = new System.Drawing.Point(164, 87);
+            this.comboBoxMinutes.Location = new System.Drawing.Point(164, 81);
             this.comboBoxMinutes.Name = "comboBoxMinutes";
             this.comboBoxMinutes.Size = new System.Drawing.Size(43, 21);
             this.comboBoxMinutes.TabIndex = 3;
@@ -88,7 +90,7 @@
             // labelMinutes
             // 
             this.labelMinutes.AutoSize = true;
-            this.labelMinutes.Location = new System.Drawing.Point(213, 90);
+            this.labelMinutes.Location = new System.Drawing.Point(213, 84);
             this.labelMinutes.Name = "labelMinutes";
             this.labelMinutes.Size = new System.Drawing.Size(37, 13);
             this.labelMinutes.TabIndex = 4;
@@ -97,7 +99,7 @@
             // checkBoxRunSystemStart
             // 
             this.checkBoxRunSystemStart.AutoSize = true;
-            this.checkBoxRunSystemStart.Location = new System.Drawing.Point(12, 20);
+            this.checkBoxRunSystemStart.Location = new System.Drawing.Point(12, 14);
             this.checkBoxRunSystemStart.Name = "checkBoxRunSystemStart";
             this.checkBoxRunSystemStart.Size = new System.Drawing.Size(185, 17);
             this.checkBoxRunSystemStart.TabIndex = 5;
@@ -106,14 +108,16 @@
             // 
             // groupBoxTrackEvents
             // 
+            this.groupBoxTrackEvents.Controls.Add(this.checkBoxTaxNews);
+            this.groupBoxTrackEvents.Controls.Add(this.checkBoxPoliceNews);
             this.groupBoxTrackEvents.Controls.Add(this.checkBoxAds);
             this.groupBoxTrackEvents.Controls.Add(this.checkBoxPublications);
             this.groupBoxTrackEvents.Controls.Add(this.checkBoxNews);
             this.groupBoxTrackEvents.Controls.Add(this.checkBoxPosts);
             this.groupBoxTrackEvents.Controls.Add(this.checkBoxTopics);
-            this.groupBoxTrackEvents.Location = new System.Drawing.Point(12, 123);
+            this.groupBoxTrackEvents.Location = new System.Drawing.Point(12, 113);
             this.groupBoxTrackEvents.Name = "groupBoxTrackEvents";
-            this.groupBoxTrackEvents.Size = new System.Drawing.Size(238, 146);
+            this.groupBoxTrackEvents.Size = new System.Drawing.Size(238, 190);
             this.groupBoxTrackEvents.TabIndex = 6;
             this.groupBoxTrackEvents.TabStop = false;
             this.groupBoxTrackEvents.Text = "Оповещать о событиях";
@@ -121,7 +125,7 @@
             // checkBoxAds
             // 
             this.checkBoxAds.AutoSize = true;
-            this.checkBoxAds.Location = new System.Drawing.Point(6, 115);
+            this.checkBoxAds.Location = new System.Drawing.Point(12, 160);
             this.checkBoxAds.Name = "checkBoxAds";
             this.checkBoxAds.Size = new System.Drawing.Size(89, 17);
             this.checkBoxAds.TabIndex = 4;
@@ -131,7 +135,7 @@
             // checkBoxPublications
             // 
             this.checkBoxPublications.AutoSize = true;
-            this.checkBoxPublications.Location = new System.Drawing.Point(6, 92);
+            this.checkBoxPublications.Location = new System.Drawing.Point(12, 91);
             this.checkBoxPublications.Name = "checkBoxPublications";
             this.checkBoxPublications.Size = new System.Drawing.Size(87, 17);
             this.checkBoxPublications.TabIndex = 3;
@@ -141,7 +145,7 @@
             // checkBoxNews
             // 
             this.checkBoxNews.AutoSize = true;
-            this.checkBoxNews.Location = new System.Drawing.Point(6, 69);
+            this.checkBoxNews.Location = new System.Drawing.Point(12, 68);
             this.checkBoxNews.Name = "checkBoxNews";
             this.checkBoxNews.Size = new System.Drawing.Size(69, 17);
             this.checkBoxNews.TabIndex = 2;
@@ -151,7 +155,7 @@
             // checkBoxPosts
             // 
             this.checkBoxPosts.AutoSize = true;
-            this.checkBoxPosts.Location = new System.Drawing.Point(6, 46);
+            this.checkBoxPosts.Location = new System.Drawing.Point(12, 45);
             this.checkBoxPosts.Name = "checkBoxPosts";
             this.checkBoxPosts.Size = new System.Drawing.Size(78, 17);
             this.checkBoxPosts.TabIndex = 1;
@@ -161,7 +165,7 @@
             // checkBoxTopics
             // 
             this.checkBoxTopics.AutoSize = true;
-            this.checkBoxTopics.Location = new System.Drawing.Point(6, 23);
+            this.checkBoxTopics.Location = new System.Drawing.Point(12, 22);
             this.checkBoxTopics.Name = "checkBoxTopics";
             this.checkBoxTopics.Size = new System.Drawing.Size(55, 17);
             this.checkBoxTopics.TabIndex = 0;
@@ -171,7 +175,7 @@
             // buttonOk
             // 
             this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonOk.Location = new System.Drawing.Point(42, 286);
+            this.buttonOk.Location = new System.Drawing.Point(42, 315);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(75, 23);
             this.buttonOk.TabIndex = 7;
@@ -182,7 +186,7 @@
             // buttonCancel
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(141, 286);
+            this.buttonCancel.Location = new System.Drawing.Point(141, 315);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 8;
@@ -190,12 +194,32 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
+            // checkBoxPoliceNews
+            // 
+            this.checkBoxPoliceNews.AutoSize = true;
+            this.checkBoxPoliceNews.Location = new System.Drawing.Point(12, 114);
+            this.checkBoxPoliceNews.Name = "checkBoxPoliceNews";
+            this.checkBoxPoliceNews.Size = new System.Drawing.Size(71, 17);
+            this.checkBoxPoliceNews.TabIndex = 5;
+            this.checkBoxPoliceNews.Text = "Милиция";
+            this.checkBoxPoliceNews.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxTaxNews
+            // 
+            this.checkBoxTaxNews.AutoSize = true;
+            this.checkBoxTaxNews.Location = new System.Drawing.Point(12, 137);
+            this.checkBoxTaxNews.Name = "checkBoxTaxNews";
+            this.checkBoxTaxNews.Size = new System.Drawing.Size(81, 17);
+            this.checkBoxTaxNews.TabIndex = 6;
+            this.checkBoxTaxNews.Text = "Налоговая";
+            this.checkBoxTaxNews.UseVisualStyleBackColor = true;
+            // 
             // IPCheckerSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(262, 325);
+            this.ClientSize = new System.Drawing.Size(262, 351);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.groupBoxTrackEvents);
@@ -230,5 +254,7 @@
         private System.Windows.Forms.CheckBox checkBoxTopics;
         private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.CheckBox checkBoxTaxNews;
+        private System.Windows.Forms.CheckBox checkBoxPoliceNews;
     }
 }

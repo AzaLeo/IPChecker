@@ -142,5 +142,29 @@ namespace IPChecker.Properties {
                 this["IntervalUpdate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TrackEventPoliceNews {
+            get {
+                return ((bool)(this["TrackEventPoliceNews"]));
+            }
+            set {
+                this["TrackEventPoliceNews"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TrackEventTaxNews {
+            get {
+                return ((bool)(this["TrackEventTaxNews"]));
+            }
+            set {
+                this["TrackEventTaxNews"] = value;
+            }
+        }
     }
 }

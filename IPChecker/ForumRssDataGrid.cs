@@ -35,7 +35,7 @@ namespace IPChecker
                 newRow.Cells.Add(new DataGridViewLinkCell() { Value = TitleWithoutSection(i.Title.Text), Tag = i.Id });
                 newRow.Cells.Add(new DataGridViewTextBoxCell() { Value = i.Categories[0].Name });
                 newRow.Cells.Add(new DataGridViewTextBoxCell() { Value = i.Authors[0].Name });
-                newRow.Cells.Add(new DataGridViewTextBoxCell() { Value = i.PublishDate.DateTime.ToString() });
+                newRow.Cells.Add(new DataGridViewTextBoxCell() { Value = i.PublishDate.LocalDateTime.ToString() });
                 _rowCollections.Add(newRow);
             }
             return _rowCollections;

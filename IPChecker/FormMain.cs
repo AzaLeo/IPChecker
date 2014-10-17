@@ -32,6 +32,12 @@ namespace IPChecker
             InitializeRssDataGrid();
         }
 
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            toolTipMain.SetToolTip(buttonCleanCount, "Сбросить счетчики");
+            toolTipMain.SetToolTip(buttonUpdate, "Обновить данные");
+        }
+
         // Установка настроек.
         private void SetSettings()
         {
@@ -70,7 +76,6 @@ namespace IPChecker
             UpdateRssDataGrid();
         }
 
-
         // Кнопка "обновить".
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
@@ -78,48 +83,52 @@ namespace IPChecker
         }
 
         // Обработчики перехода по ссылкам.
-        //
-        private void dataGridViewTopics_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
-            {
-                var clickCell = dataGridViewTopics.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                System.Diagnostics.Process.Start((string)clickCell.Tag);
-            }
-        }
+            DataGridView d = sender as DataGridView;
 
-        private void dataGridViewPosts_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 0 && d != null)
             {
-                var clickCell = dataGridViewPosts.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                System.Diagnostics.Process.Start((string)clickCell.Tag);
-            }
-        }
+                DataGridViewCell clickCell = new DataGridViewLinkCell();
 
-        private void dataGridViewNews_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 0)
-            {
-                var clickCell = dataGridViewNews.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                System.Diagnostics.Process.Start((string)clickCell.Tag);
-            }
-        }
-
-        private void dataGridViewPublications_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 0)
-            {
-                var clickCell = dataGridViewPublications.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                System.Diagnostics.Process.Start((string)clickCell.Tag);
-            }
-        }
-
-        private void dataGridViewAds_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 0)
-            {
-                var clickCell = dataGridViewAds.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                switch (d.Name)
+                {
+                    case "dataGridViewTopics":
+                        clickCell = dataGridViewTopics.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        labelNewTopicsCount.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+                        labelNewTopicsCount.Text = "0";
+                        break;
+                    case "dataGridViewPosts":
+                        clickCell = dataGridViewPosts.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        labelNewPostsCount.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+                        labelNewPostsCount.Text = "0";
+                        break;
+                    case "dataGridViewNews":
+                        clickCell = dataGridViewNews.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        labelNewsCount.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+                        labelNewsCount.Text = "0";
+                        break;
+                    case "dataGridViewPublications":
+                        clickCell = dataGridViewPublications.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        labelNewPublicationsCount.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+                        labelNewPublicationsCount.Text = "0";
+                        break;
+                    case "dataGridViewPoliceNews":
+                        clickCell = dataGridViewPoliceNews.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        labelPoliceNewsCount.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+                        labelPoliceNewsCount.Text = "0";
+                        break;
+                    case "dataGridViewTaxNews":
+                        clickCell = dataGridViewTaxNews.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        labelTaxNewsCount.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+                        labelTaxNewsCount.Text = "0";
+                        break;
+                    case "dataGridViewAds":
+                        clickCell = dataGridViewAds.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        labelNewAdsCount.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+                        labelNewAdsCount.Text = "0";
+                        break;
+                }
                 System.Diagnostics.Process.Start((string)clickCell.Tag);
             }
         }
@@ -131,6 +140,8 @@ namespace IPChecker
             AddNewRowsPosts(_forumRssDataGrid.GetPosts());
             AddNewRowsNews(_contentRssDataGrid.GetNews());
             AddNewRowsPublications(_contentRssDataGrid.GetPublications());
+            AddNewRowsPoliceNews(_contentRssDataGrid.GetPoliceNews());
+            AddNewRowsTaxNews(_contentRssDataGrid.GetTaxNews());
             AddNewRowsAds(_adsRssDataGrid.GetAds());
             labelTimeUpdate.Text = DateTime.Now.ToString("HH:mm:ss");
         }
@@ -142,6 +153,8 @@ namespace IPChecker
             var newRowsPosts = _forumRssDataGrid.GetPosts();
             var newRowsNews = _contentRssDataGrid.GetNews();
             var newRowsPublications = _contentRssDataGrid.GetPublications();
+            var newRowsPoliceNews = _contentRssDataGrid.GetPoliceNews();
+            var newRowsTaxNews = _contentRssDataGrid.GetTaxNews();
             var newRowsAds = _adsRssDataGrid.GetAds();
             var haveUpdate = 0;
 
@@ -156,7 +169,7 @@ namespace IPChecker
             if (Settings.Default.TrackEventPosts && _notifyChangeRss.CheckPosts(dataGridViewPosts.Rows[0], newRowsPosts) > 0)
             {
                 haveUpdate++;
-                labelNewPostsCount.Text = _notifyChangeRss.NewPostsCount.ToString();
+                labelNewPostsCount.Text = haveUpdate.ToString();
                 labelNewPostsCount.ForeColor = Color.Red;
                 AddNewRowsPosts(newRowsPosts);
             }
@@ -175,6 +188,22 @@ namespace IPChecker
                 labelNewPublicationsCount.Text = _notifyChangeRss.NewPublicationsCount.ToString();
                 labelNewPublicationsCount.ForeColor = Color.Red;
                 AddNewRowsPublications(newRowsPublications);
+            }
+
+            if (Settings.Default.TrackEventPoliceNews && _notifyChangeRss.CheckPoliceNews(dataGridViewPoliceNews.Rows[0], newRowsPoliceNews) > 0)
+            {
+                haveUpdate++;
+                labelPoliceNewsCount.Text = _notifyChangeRss.NewPoliceCount.ToString();
+                labelPoliceNewsCount.ForeColor = Color.Red;
+                AddNewRowsPoliceNews(newRowsPoliceNews);
+            }
+
+            if (Settings.Default.TrackEventTaxNews && _notifyChangeRss.CheckTaxNews(dataGridViewTaxNews.Rows[0], newRowsTaxNews) > 0)
+            {
+                haveUpdate++;
+                labelTaxNewsCount.Text = _notifyChangeRss.NewTaxCount.ToString();
+                labelTaxNewsCount.ForeColor = Color.Red;
+                AddNewRowsTaxNews(newRowsTaxNews);
             }
 
             if (Settings.Default.TrackEventAds && _notifyChangeRss.CheckAds(dataGridViewAds.Rows[0], newRowsAds) > 0)
@@ -219,6 +248,18 @@ namespace IPChecker
             dataGridViewPublications.Rows.AddRange(newRows.ToArray());
         }
 
+        private void AddNewRowsPoliceNews(List<DataGridViewRow> newRows)
+        {
+            dataGridViewPoliceNews.Rows.Clear();
+            dataGridViewPoliceNews.Rows.AddRange(newRows.ToArray());
+        }
+
+        private void AddNewRowsTaxNews(List<DataGridViewRow> newRows)
+        {
+            dataGridViewTaxNews.Rows.Clear();
+            dataGridViewTaxNews.Rows.AddRange(newRows.ToArray());
+        }
+
         private void AddNewRowsAds(List<DataGridViewRow> newRows)
         {
             dataGridViewAds.Rows.Clear();
@@ -257,5 +298,25 @@ namespace IPChecker
             }
         }
 
+        // Обнуление счетчиков событий.
+        private void buttonCleanCount_Click(object sender, EventArgs e)
+        {
+            // Возвращение цвета.
+            labelNewTopicsCount.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+            labelNewPostsCount.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+            labelNewsCount.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+            labelNewPublicationsCount.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+            labelPoliceNewsCount.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+            labelTaxNewsCount.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+            labelNewAdsCount.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+            // Обнуление.
+            labelNewTopicsCount.Text = "0";
+            labelNewPostsCount.Text = "0";
+            labelNewsCount.Text = "0";
+            labelNewPublicationsCount.Text = "0";
+            labelPoliceNewsCount.Text = "0";
+            labelTaxNewsCount.Text = "0";
+            labelNewAdsCount.Text = "0";
+        }
     }
 }

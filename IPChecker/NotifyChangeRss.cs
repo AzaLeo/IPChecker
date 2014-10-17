@@ -13,6 +13,8 @@ namespace IPChecker
         public int NewPostsCount { get; private set; }
         public int NewsCount { get; private set; }
         public int NewPublicationsCount { get; private set; }
+        public int NewPoliceCount { get; private set; }
+        public int NewTaxCount { get; private set; }
         public int NewAdsCount { get; private set; }
         private int _i;
         private const int _forumDateCell = 3, _contentDateCell = 1, _adsDateCell = 2;
@@ -63,6 +65,30 @@ namespace IPChecker
                 }
             }
             return NewPublicationsCount += _i;
+        }
+
+        internal int CheckPoliceNews(DataGridViewRow dataGridViewRow, List<DataGridViewRow> newRowsPoliceNews)
+        {
+            for (_i = 0; _i <= newRowsPoliceNews.Count; _i++)
+            {
+                if (dataGridViewRow.Cells[_contentDateCell].Value.Equals(newRowsPoliceNews[_i].Cells[_contentDateCell].Value))
+                {
+                    break;
+                }
+            }
+            return NewPoliceCount += _i;
+        }
+
+        internal int CheckTaxNews(DataGridViewRow dataGridViewRow, List<DataGridViewRow> newRowsTaxNews)
+        {
+            for (_i = 0; _i <= newRowsTaxNews.Count; _i++)
+            {
+                if (dataGridViewRow.Cells[_contentDateCell].Value.Equals(newRowsTaxNews[_i].Cells[_contentDateCell].Value))
+                {
+                    break;
+                }
+            }
+            return NewTaxCount += _i;
         }
 
         internal int CheckAds(DataGridViewRow dataGridViewRow, List<DataGridViewRow> newRowsAds)

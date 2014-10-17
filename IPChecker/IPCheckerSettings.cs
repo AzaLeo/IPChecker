@@ -30,6 +30,8 @@ namespace IPChecker
             checkBoxPosts.Checked = Settings.Default.TrackEventPosts;
             checkBoxNews.Checked = Settings.Default.TrackEventNews;
             checkBoxPublications.Checked = Settings.Default.TrackEventPublications;
+            checkBoxPoliceNews.Checked = Settings.Default.TrackEventPoliceNews;
+            checkBoxTaxNews.Checked = Settings.Default.TrackEventTaxNews;
             checkBoxAds.Checked = Settings.Default.TrackEventAds;
             CheckIntervalCheckBox();
         }
@@ -45,6 +47,8 @@ namespace IPChecker
             Settings.Default.TrackEventPosts = checkBoxPosts.Checked;
             Settings.Default.TrackEventNews = checkBoxNews.Checked;
             Settings.Default.TrackEventPublications = checkBoxPublications.Checked;
+            Settings.Default.TrackEventPoliceNews = checkBoxPoliceNews.Checked;
+            Settings.Default.TrackEventTaxNews = checkBoxTaxNews.Checked;
             Settings.Default.TrackEventAds = checkBoxAds.Checked;
             Settings.Default.Save();
             OnUpdateSettings(EventArgs.Empty);
